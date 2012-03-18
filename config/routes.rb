@@ -1,4 +1,16 @@
 Unitedrv322::Application.routes.draw do
+  get "static_pages/home"
+
+  get "static_pages/about"
+
+  get "static_pages/parts"
+
+  get "static_pages/service"
+
+  get "static_pages/news"
+
+  get "static_pages/contact"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
