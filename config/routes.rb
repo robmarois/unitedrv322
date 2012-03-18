@@ -1,15 +1,15 @@
 Unitedrv322::Application.routes.draw do
-  get "static_pages/home"
+  get "users/new"
 
-  get "static_pages/about"
-
-  get "static_pages/parts"
-
-  get "static_pages/service"
-
-  get "static_pages/news"
-
-  get "static_pages/contact"
+  root to: 'static_pages#home'
+  
+  match '/signup',  to: 'users#new'
+  
+  match '/about',   to: 'static_pages#about'
+  match '/contact', to: 'static_pages#contact'
+  match '/parts',   to: 'static_pages#parts'
+  match '/service', to: 'static_pages#service'
+  match '/news',   to: 'static_pages#news'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
