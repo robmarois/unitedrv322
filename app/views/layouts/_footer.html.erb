@@ -15,8 +15,15 @@
         <li><%= link_to "Services", service_path %></li>
         <li><%= link_to "News", news_path %></li>
         <li><%= link_to "Contact", 'contact_path' %></li>
+        <% if signed_in? %>
+        <li><%= link_to "Profile", current_user %></li>
+        <li><%= link_to "Settings", '#' %></li>
+        <li>
+          <%= link_to "Sign out", signout_path, method: "delete" %>
+        </li>
+        <% end %>
       </ul>
-    </nav>
+      
     
     <p class="copyright">&copy; 2012 Ten in Five Productions<br />
     </p>
