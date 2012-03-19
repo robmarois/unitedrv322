@@ -1,0 +1,408 @@
+@import "bootstrap";
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.7em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #999;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.3em;
+}
+
+#images  {
+	display: inline-block; 
+	float: left;
+	clear: both;
+	margin-top: 30px;
+	width: 900px;
+}
+
+/* web fonts */
+
+@font-face {
+	font-family: 'DroidSansRegular';
+	src: url('/fonts/DroidSans-webfont.eot');
+	src: local('☺'), url('/fonts/DroidSans-webfont.woff') format('woff'), url('/fonts/DroidSans-webfont.ttf') format('truetype'), url('/fonts/DroidSans-webfont.svg#webfontw7zqO19G') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'DroidSansBold';
+	src: url('/fonts/DroidSans-Bold-webfont.eot');
+	src: local('☺'), url('/fonts/DroidSans-Bold-webfont.woff') format('woff'), url('/fonts/DroidSans-Bold-webfont.ttf') format('truetype'), url('/fonts/DroidSans-Bold-webfont.svg#webfontSOhoM6aS') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'MarketingScriptRegular';
+	src: url('/fonts/MarketingScript-webfont.eot');
+	src: local('☺'), url('/fonts/MarketingScript-webfont.woff') format('woff'), url('/fonts/MarketingScript-webfont.ttf') format('truetype'), url('/fonts/MarketingScript-webfont.svg#webfontZ5AiaAsu') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'LeagueGothicRegular';
+	src: url('/fonts/League_Gothic-webfont.eot');
+	src: local('☺'), url('/fonts/League_Gothic-webfont.woff') format('woff'), url('/fonts/League_Gothic-webfont.ttf') format('truetype'), url('/fonts/League_Gothic-webfont.svg#webfontFHzvtkso') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+    font-family: 'PermanentMarkerRegular';
+    src: url('/fonts/PermanentMarker-webfont.eot');
+    src: url('/fonts/PermanentMarker-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/PermanentMarker-webfont.woff') format('woff'),
+         url('/fonts/PermanentMarker-webfont.ttf') format('truetype'),
+         url('/fonts/PermanentMarker-webfont.svg#PermanentMarkerRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RockSaltRegular';
+    src: url('/fonts/RockSalt-webfont.eot');
+    src: url('/fonts/RockSalt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/RockSalt-webfont.woff') format('woff'),
+         url('/fonts/RockSalt-webfont.ttf') format('truetype'),
+         url('/fonts/RockSalt-webfont.svg#RockSaltRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* background gradient */
+
+#background {
+background-color: #2867b7;
+background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(40, 103, 183)), to(rgb(185, 213, 246)));
+background-image: -webkit-linear-gradient(top, rgb(40, 103, 183), rgb(185, 213, 246));
+background-image: -moz-linear-gradient(top, rgb(40, 103, 183), rgb(185, 213, 246));
+background-image: -o-linear-gradient(top, rgb(40, 103, 183), rgb(185, 213, 246));
+background-image: -ms-linear-gradient(top, rgb(40, 103, 183), rgb(185, 213, 246));
+background-image: linear-gradient(top, rgb(40, 103, 183), rgb(185, 213, 246));
+filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#2867b7', EndColorStr='#b9d5f6');
+}
+
+.container {
+  background-color: #fff;
+  border-right: 4px solid #919191;
+	border-left: 4px solid #919191;
+}
+
+/* header */
+
+#header {
+	position: relative;
+	width: 100%;
+	height: 185px;
+	background: #fff;
+	background: url(/assets/flag.png) no-repeat;
+}
+
+#left-header {
+	float: left;
+	width: 230px;
+	height: 152px;
+	background: asset-url("header-rv-left.png", image) no-repeat;
+	opacity: .65;
+	top: -20px;
+	&:hover {
+	opacity: 1;
+  }
+}
+
+#right-header {
+	float: right;
+	width: 274px;
+	height: 154px;
+	background: asset-url("header-rv-right.png", image) no-repeat;
+	opacity: .65;
+	top: -20px;
+	&:hover {
+	opacity: 1;
+  }
+}
+
+#logo {
+	position: absolute;
+	top: -30px;
+	left: 360px;
+	width: 200px;
+	height: 160px;
+	background: asset-url("logo.png", image) no-repeat;
+	-webkit-transition: opacity .2s ease-in-out;
+	-moz-transition: opacity .2s ease-in-out;
+	-o-transition: opacity .2s ease-in-out;
+	transition: opacity .2s ease-in-out;
+	&:hover {
+	opacity: .70;
+  }
+}
+
+.header-address {
+		padding-top: 140px;
+		overflow: clear;
+}
+
+.header-address .left {
+	margin-left: 45px;
+	margin-top: -25px;
+	color: #000;
+	font: bold 16px "DroidSansBold", Verdana,sans-serif;
+	float: left;
+	opacity: 0.75;
+}
+
+.header-address .left:hover, .header-address .right:hover {
+	opacity: 1.0;
+}
+
+.header-address .center {
+	margin-left: 170px;
+	margin-top: -17px;
+	color: #244a6a;
+	font: normal 24px "MarketingScriptRegular", Georgia, serif;
+	float: left;
+}
+
+.header-address .right {
+	margin-right: 95px;
+	margin-top: -25px;
+	color: #000;
+	font: bold 16px "DroidSansBold", Verdana,sans-serif;
+	float: right;
+	opacity: 0.75;
+	text-align: right;
+}
+
+/* navigation */
+
+#primary {
+	width: 940px;
+	height: 28px;
+	background-color: #efefef;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	padding-top: 14px;
+	-webkit-box-shadow: 0px 2px 4px #ccc;
+	-moz-box-shadow: 0px 2px 4px #ccc;
+	box-shadow: 0px 2px 4px #ccc;
+	font: bold 13px "DroidSansBold", Verdana,sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	
+	ul li {
+    display: inline;
+    padding-left: 33px;
+  }
+  
+  li a {
+    padding: 5px 15px;
+    color: #64645d;
+    text-shadow: 1px 1px 1px #fff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    &:hover {
+      color: #dc692e;
+      background: #efefe9;
+    }
+  }
+}
+
+/* Home Page */
+
+ul.polaroids { float: left; width: 970px; margin: 0 0 18px 30px; padding-right: 240px;background: url(../images/map2.png);
+ }
+		ul.polaroids li { display: inline; }
+		ul.polaroids a { background: #fff; display: inline; float: left; margin: 0 0 27px 40px; width: auto; padding: 10px 10px 15px; text-align: center; font-family: "RockSaltRegular", sans-serif; text-decoration: none; color: #333; font-size: 12px; -webkit-box-shadow: 0 6px 9px rgba(0,0,0,.25); -moz-box-shadow: 0 3px 6px rgba(0,0,0,.25); -ms-box-shadow: 0 3px 6px rgba(0,0,0,.25); -webkit-transform: rotate(-2deg); -webkit-transition: -webkit-transform .15s linear; -moz-transform: rotate(-2deg); -ms-transform: rotate(-2deg); -ms-transition: -ms-transform .15s linear; }
+		ul.polaroids img { display: block; width: 170px; margin-bottom: 12px; }
+		ul.polaroids a:after { content: attr(title); }
+		
+		ul.polaroids li:nth-child(even) a { -webkit-transform: rotate(2deg);  -moz-transform: rotate(2deg); -ms-transform: rotate(2deg); }
+		ul.polaroids li:nth-child(3n) a { -webkit-transform: none; position: relative; top: -5px;  -moz-transform: none; }
+		ul.polaroids li:nth-child(5n) a { -webkit-transform: rotate(5deg); position: relative; right: 5px;  -moz-transform: rotate(5deg); -ms-transform: rotate(5deg); }
+		ul.polaroids li:nth-child(8n) a { position: relative; right: 5px; top: 8px; }
+		ul.polaroids li:nth-child(11n) a { position: relative; left: -5px; top: 3px; }
+		ul.polaroids li.messy1 a { margin-top: -35px; margin-left: 10px; -webkit-transform: rotate(8deg); -moz-transform: rotate(8deg); -ms-transform: rotate(8deg); }
+		ul.polaroids li.messy2 a { margin-top: -385px; margin-left: 240px; -webkit-transform: rotate(5deg); -moz-transform: rotate(5deg); -ms-transform: rotate(5deg); }
+		ul.polaroids li.messy a { margin-top: -195px; margin-left: 230px; -webkit-transform: rotate(-8deg); -moz-transform: rotate(8deg); -ms-transform: rotate(-8deg); }
+		
+		ul.polaroids li a:hover { -webkit-transform: scale(1.25); -moz-transform: scale(1.25); -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.5); -moz-box-shadow: 0 3px 6px rgba(0,0,0,.5); -ms-transform: scale(1.25); -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.5); position: relative; z-index: 5; }
+		
+
+ul.polaroids-page { float: left; width: 940px; margin: 0 0 18px 30px; padding-right: 20px;
+ }
+		ul.polaroids-page li { display: inline; }
+		ul.polaroids-page a { background: #fff; display: inline; float: left; margin: 0 0 27px 10px; width: auto; padding: 10px 10px 15px; text-align: center; font-family: "RockSaltRegular", sans-serif; text-decoration: none; color: #333; font-size: 12px; -webkit-box-shadow: 0 6px 9px rgba(0,0,0,.25); -moz-box-shadow: 0 3px 6px rgba(0,0,0,.25); -ms-box-shadow: 0 3px 6px rgba(0,0,0,.25); -webkit-transform: rotate(-2deg); -webkit-transition: -webkit-transform .15s linear; -moz-transform: rotate(-2deg); -ms-transform: rotate(-2deg); -ms-transition: -ms-transform .15s linear; }
+		ul.polaroids-page img { display: block; width: 450px; margin-bottom: 12px; }
+		ul.polaroids-page a:after { content: attr(title); }
+
+
+
+/* Text Display */
+
+#selections {
+	float: left;
+	width: 380px;
+	background: #fff;
+	padding-bottom: 113px;
+	padding-right: 10px;
+	margin-left: 20px;
+  h2 {
+    font: normal 24px "MarketingScriptRegular", Georgia, serif;
+    color: #717165;
+    margin-left: 10px;
+    padding: 5px 0 0 0;
+    border-bottom: 1px solid #ecece9;
+    width: auto;
+    text-align: left;
+  }
+  p {
+    font-size: 18px;
+    color: #717165;
+    margin-left: 10px;
+    padding: 5px 0 0 0;
+    width: auto;
+    text-align: left;
+  }
+  ul li {
+    width: 316px;
+    font: normal 18px #717165; 
+    color: #717165;
+    text-shadow: 1px 1px 1px #fff;
+    position: relative;
+    margin-bottom: 5px;
+    margin-left: 40px;
+    letter-spacing: 1px;
+    list-style-type: disc;
+  }
+}
+
+
+
+
+
+
+/* footer */
+
+#primary-foot {
+	width: 920px;
+	float: left;
+	background: #e2e2d7;
+	border: 1px solid #d2d2c4;
+	margin-left: 10px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#history {
+	float: left;
+	width: 300px;
+	height: 150px;
+	background: asset-url("header-rv-left.png", image) no-repeat top left;
+	opacity: .85;
+	padding: 15px 0 0 225px;
+	color: #6a6a5d;
+	text-shadow: 1px 1px 1px #fff;
+	clear: none;
+	h3 {
+    font: 12px "DroidSansBold", Verdana, sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+  }
+  p {
+    font: normal 12px "DroidSansRegular", Verdana, sans-serif;
+    line-height: 18px;
+    a {
+      text-decoration: underline;
+      color: #6a6a5d;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+#info {
+	float: right;
+	width: 385px;
+	margin-top: 15px;
+	a {
+    color: #6a6a5d;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  ul li {
+    display: inline;
+    border-right: 1px solid #9f9f8f;
+    padding: 0 5px 0 1px;
+    font: bold 11px "DroidSansBold", Verdana, sans-serif;
+    text-transform: uppercase;
+    text-align: right;
+      &:last-child {
+        border-right: none;
+      }
+  }
+}
+
+
+.copyright {
+	/* background: url(../images/bottle.png) left no-repeat; */
+	opacity: .15;
+	padding: 20px 0 0 35px;
+	height: 67px;
+	font: normal 10px "DroidSansRegular", Verdana, sans-serif;
+	line-height: 16px;
+	margin-top: 15px;
+	color: #000000;
+	-webkit-transition: opacity .3s ease-in-out;
+	-moz-transition: opacity .3s ease-in-out;
+	-o-transition: opacity .3s ease-in-out;
+	transition: opacity .3s ease-in-out;
+	&:hover {
+    opacity: .7;
+  }
+}
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
