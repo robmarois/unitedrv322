@@ -16,6 +16,15 @@ def sign_in(user)
   cookies[:remember_token] = user.remember_token
 end
 
+def support_email(question)
+  visit contact_path
+  fill_in "Name",     with: question.name
+  fill_in "Email",    with: question.email
+  fill_in "Phone",    with: question.phone
+  fill_in "Phone",    with: question.question
+end
+
+
 RSpec::Matchers.define :have_error_message do |message|
   match do |page|
     page.should have_selector('div.alert.alert-error', text: message)
