@@ -1,0 +1,12 @@
+<div id="camper-fields" class="users">
+<h2>New Camper Entry</h2>
+<br />
+<%= form_for @camper do |f| %>
+	<%= render 'shared/error_messages', :object => f.object %>
+	<%= render 'fields', :f => f %>
+	
+	<div id="sign-up" class="actions">
+		<%= f.submit "Create RV" %>
+
+	</div>
+<% end %>

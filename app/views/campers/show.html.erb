@@ -1,0 +1,87 @@
+<section class="round">
+  		<% flash.each do |key, value| %>
+  		  <%= content_tag(:div, value, :class => "flash #{key}") %>
+		<% end %>
+</section>
+
+<div class = "camper_show_wrapper">
+ <div class = "camper_show_listing round">
+	<h2 class="camper_show_headline"><%= @camper.headline %></h2>
+	<% if signed_in? %>
+	<%= link_to "edit RV", edit_camper_path %>
+	<% end %>
+	  <div class="camper_show_picture">
+	    
+	    
+	     
+	  </div>
+	  <div class="camper_show_details"><br />
+		  <span class="price"><%= number_to_currency(@camper.price_now, :unit => "$") %></span>
+		  <br />
+		  <p>
+			<span class="col1">Type:</span><span class="col2"><%= @camper.category.category_name %></span>
+			<span class="col3">Mileage:</span><span class="col4"><%= number_with_delimiter(@camper.mileage) %></span>
+		  </p>
+		  <p>
+			<span class="col1">Make:</span><span class="col2"><%= @camper.brand.brand_name %></span>
+			<span class="col3">Year:</span><span class="col4"><%= @camper.year %></span>
+		  </p>
+		  <p>
+			<span class="col1">Model:</span><span class="col2">Chalet</span>			
+			<span class="col3">Length:</span><span class="col4"><%= @camper.length %></span>
+		  </p>
+		  <p>
+			<span class="col1">A/C:</span><span class="col2"><%= pluralize(@camper.ac_units, "unit") %></span>			
+			<span class="col3">Stock #:</span><span class="col4"><%= @camper.stock_number %></span>
+		  </p>
+		  <p>
+			<span class="col1">Slides:</span><span class="col2"><%= @camper.slide %></span>
+			<span class="col3">New:</span><span class="col4"><% if @camper.is_new == true %> Yes <% else %> No <% end %></span>			
+		  </p>
+		  <p>
+		  <span class="col1">Weight:</span><span class="col2"><%= @camper.weight %></span>	
+		  <span class="col3">Status:</span><span class="col4"><%= @camper.status.status %></span>	
+		  </p>
+		  <p>
+		  <span class="col1">Engine:</span><span class="col2"><%= @camper.engine.engine_type %></span>	
+		  
+		  	
+		  </p><br />
+		  <span class="features"><%= raw RedCloth.new(@camper.features).to_html %></span>
+		  
+	    	
+	  </div>
+	  
+	  
+ 
+  </div>
+  
+  
+  <div id="camper_photos">
+  	<section  class="box"><header><h1 class="script">Additional Photos</h1>
+  	</header>
+	<br />
+	
+	 
+		  
+		  
+	  
+	
+	
+	
+	
+	</section>
+	
+	
+	</div>
+ 
+	<div id="camper_blocks">
+
+	
+	
+  </div>	
+</div>
+
+<div id="cboxOverlay" style="opacity: 1; cursor: auto; display: none; "></div>
+	
+	

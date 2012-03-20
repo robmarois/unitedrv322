@@ -1,0 +1,59 @@
+		<div id="sign-up" >
+		
+		<div class="left">
+		<%= f.label :headline %>
+		<%= f.text_field :headline, :size => 50 %>
+	
+		<%= f.label 'Our Price' %>
+		<%= f.number_field number_with_delimiter(:price_now), :size => 6 %>
+	
+		<%= f.label :year %>
+		<%= f.text_field :year, :size => 4 %>
+		
+		<%= f.label :mileage %>
+		<%= f.number_field number_with_delimiter(:mileage), :size => 4 %>
+		
+		<%= f.label 'Stock Number' %>
+		<%= f.text_field :stock_number, :size => 4 %>
+	
+		<%= f.label :length %> 
+		<%= f.text_field :length, :size => 2 %>(in feet)
+		
+		<%= f.label :weight %> 
+		<%= f.text_field(:weight) %>(in lbs)
+	
+		<%= f.label "# of AC Units" %>
+		<%= f.text_field :ac_units, :size => 2 %>
+		
+		<%= f.label '# of Slides' %>
+		<%= f.text_field :slide, :size => 2 %>
+		
+		<%= f.label 'Engine Type' %>
+		<%= f.select :engine_id, options_from_collection_for_select( Engine.all, :id, :engine_type),:prompt => 'Select Engine Type' %>	
+	</div>
+	<div class="right">
+
+	
+		<%= f.label :features %>
+		<%= f.text_area :features %>
+	
+		<%= f.label :brand_id %>
+		<%= f.select :brand_id, options_from_collection_for_select( Brand.all, :id, :brand_name, :selected => @camper.brand_id),:prompt => 'Select Brand' %>	
+	
+	
+		<%= f.label :category_id %>
+		<%= f.select :category_id, options_from_collection_for_select( Category.all, :id, :category_name, :selected => @camper.category_id),:prompt => 'Select Category' %>	
+		
+		<%= f.label 'Sold Status' %>
+		<%= f.select :status_id, options_from_collection_for_select( Status.all, :id, :status, :selected => @camper.status_id),:prompt => 'Sold Status' %>	
+		
+		<%= f.label 'New Camper?' %>
+		<%= f.check_box :is_new %>	
+		
+	</div>	
+		
+  
+	 
+	</div>
+	
+
