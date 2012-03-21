@@ -5,4 +5,9 @@ class QuestionMailer < ActionMailer::Base
     @question = question
     mail(:to => "rmarois@gmail.com", :subject => "Question")
   end
+  
+  def prospect_message(prospect)
+  	@prospect = prospect
+    mail(:to => @prospect.email, :subject => "A new message is ready", :from => "rmarois@gmail.com")
+  end
 end

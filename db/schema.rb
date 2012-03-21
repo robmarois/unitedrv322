@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120320200222) do
+ActiveRecord::Schema.define(:version => 20120320221156) do
+
+  create_table "attachments", :force => true do |t|
+    t.text     "description"
+    t.string   "file"
+    t.integer  "attachable_id"
+    t.string   "attachable_type"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "brands", :force => true do |t|
     t.string   "brand_name"
@@ -68,6 +77,16 @@ ActiveRecord::Schema.define(:version => 20120320200222) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "prospects", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone"
+    t.text     "comments"
+    t.integer  "camper_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "questions", :force => true do |t|
     t.string   "name"
     t.string   "email"
@@ -77,8 +96,34 @@ ActiveRecord::Schema.define(:version => 20120320200222) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "searches", :force => true do |t|
+    t.string   "keywords"
+    t.integer  "brand_id"
+    t.integer  "min_price_id"
+    t.integer  "max_price_id"
+    t.integer  "type_id"
+    t.integer  "category_id"
+    t.integer  "sort_by_id"
+    t.boolean  "is_new",       :default => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+  end
+
+  create_table "specials", :force => true do |t|
+    t.integer  "camper_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "statuses", :force => true do |t|
     t.string   "status"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "subscribers", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

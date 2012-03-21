@@ -75,10 +75,39 @@
 	
 	</div>
  
-	<div id="camper_blocks">
+		<div id="camper_blocks">
 
 	
-	
+	<section id="newsletter" class="box box-right">
+			<header><h1 class="script">Contact us for more info</h1></header>
+		
+			
+			<%= form_for @prospect, :html => {:id => "sign-up"} do |f| %>
+						<fieldset>
+						<label for="news-name" >Your Name</label>
+						
+						<%= f.text_field :name, :id=>"news-firstname", :placeholder=>"Your Name" %>
+						</fieldset>
+						<fieldset>
+						<label for="news-email" >Email</label> 
+						<%= f.email_field :email, :id=>"news-email", :placeholder=>"Your Email Address" %>
+						</fieldset>
+						<fieldset>
+						<label for="news-email" >Phone</label> 
+						<%= f.text_field :phone, :id=>"news-phone", :placeholder=>"Your Phone Number (optional)" %>
+						</fieldset>
+						<fieldset>
+						<label for="news-email" >Message</label> 
+						<%= f.text_area :comments, :id=>"news-comments", :rows => 4, :placeholder=>"Your Message" %>
+						</fieldset>
+						<%= f.hidden_field :camper_id, {:value => @camper.id } %>
+						<fieldset>
+						<%= f.submit "Submit" %>
+					
+					</fieldset> 
+					<% end %>
+		</form>
+  </section>
   </div>	
 </div>
 

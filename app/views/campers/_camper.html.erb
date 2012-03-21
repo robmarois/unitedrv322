@@ -1,0 +1,35 @@
+	<div class = "camper_listing round">
+			
+				<div class = "listing_pic" >
+					<% for attachment in camper.attachments %>
+            <% if attachment.id == camper.attachment_id %>
+            <%= image_tag attachment.file_url, :class => "group1", :title => attachment.description, :width => 150, :href => attachment.file_url if attachment.file? %>
+            <% end %>
+          <% end %>
+				</div>
+				
+				<div class = "listing_details">
+					<h2><%= truncate(camper.headline, :length => 60) %></h2>
+					<p>
+					<span class="col1">Type: <%= camper.category.category_name %></span>
+					<span class="col2"><%= number_with_delimiter(camper.mileage) %> Miles</span>
+					<span class="col3">Make: <%= camper.brand.brand_name %></span>
+					</p>
+					<p>
+					<span class="col1">Year: <%= camper.year %></span>
+					<span class="col2">Length: <%= camper.length %> Feet</span>
+					<span class="col3">Model: Chalet</span>
+					</p>
+					<p class="features"><%= truncate(camper.features, :length => 180) %></p>
+				</div>
+				
+				<div class = "listing_price">
+					<p class="price"><%= number_to_currency(camper.price_now, :unit => "$") %></p>
+					
+					<a href="/campers/<%= camper.id %>"><input type="submit" value="View Details" ></a>
+				</div>
+			
+			</div>
+
+   
+

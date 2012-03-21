@@ -26,7 +26,7 @@
 
 class Camper < ActiveRecord::Base
 
-  attr_accessible :headline, :price_now, :year, :length, :ac_units, :slide, :features, :brand_id, :mileage, :stock_number, :category_id, :is_new, :model_id, :status_id, :weight, :engine_id
+  attr_accessible :headline, :price_now, :year, :length, :ac_units, :slide, :features, :brand_id, :mileage, :stock_number, :category_id, :is_new, :model_id, :status_id, :weight, :engine_id, :attachments_attributes, :attachment_id
 
   validates :price_now, :presence => true 
 	validates :year, :presence => true
@@ -36,4 +36,9 @@ class Camper < ActiveRecord::Base
 	belongs_to :category, :foreign_key => "category_id"
 	belongs_to :status
 	belongs_to :engine
+	
+	has_many :specials
+	has_many :attachments, :as => :attachable
+	
+	accepts_nested_attributes_for :attachments, :reject_if=> proc {|attributes| attributes[:file].blank?}, :allow_destroy => true
 end

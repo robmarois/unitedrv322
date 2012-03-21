@@ -10,6 +10,7 @@ namespace :db do
     make_minprice
     make_maxprice
     make_engine_type
+    make_special
   end
 end
 
@@ -130,4 +131,8 @@ def make_engine_type
   engine = Engine.create!(:engine_type => "Diesel")
   engine2 = Engine.create!(:engine_type => "Gas")
   engine3 = Engine.create!(:engine_type => "None")
+end
+
+def make_special
+  special = Special.create!(:camper_id => 1)
 end

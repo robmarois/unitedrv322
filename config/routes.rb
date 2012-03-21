@@ -3,6 +3,11 @@ Unitedrv322::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :questions
   resources :campers
+  resources :attachments
+  resources :searches
+  resources :prospects
+  resources :subscribers
+  resources :specials
 
   root to: 'static_pages#home'
   
@@ -14,7 +19,8 @@ Unitedrv322::Application.routes.draw do
   match '/contact', to: 'static_pages#contact'
   match '/parts',   to: 'static_pages#parts'
   match '/service', to: 'static_pages#service'
-  match '/news',   to: 'static_pages#news'
+  match '/news',    to: 'static_pages#news'
+  match '/search',   to: 'searches#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

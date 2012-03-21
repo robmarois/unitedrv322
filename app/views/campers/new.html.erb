@@ -1,7 +1,8 @@
 <div id="camper-fields" class="users">
 <h2>New Camper Entry</h2>
 <br />
-<%= form_for @camper do |f| %>
+
+<%= nested_form_for @camper, :html=>{:multipart => true } do |f| %>
 	<%= render 'shared/error_messages', :object => f.object %>
 	<%= render 'fields', :f => f %>
 	

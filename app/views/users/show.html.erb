@@ -7,4 +7,21 @@
       </h1>
     </section>
   </aside>
+  <div class="profile">
+<span>
+<h2>User Profile Page</h2><br />
+<%= @user.name %>, welcome. You are now signed-in.<br /><br />
+<%= link_to "Change your user name, email or password", edit_user_path(current_user) %><br /><br />
+<%= link_to "Create a new listing", new_camper_path %><br /><br />
+
+
+<p>Listing to be shown as "Featured Camper" on the home page:</p>
+<%= form_for @special do |f| %>
+<%= f.select :camper_id, options_from_collection_for_select(Camper.all, :id, :headline, :selected => @special.camper_id),:prompt => 'Select Featured Camper' %>
+<%= f.submit "Update Featured RV" %>
+<% end %>
+
+
+</span>
+</div>
 </div>
