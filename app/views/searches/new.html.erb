@@ -1,40 +1,37 @@
 <div class="search_wrap">
 <div class="listing_wrapper round">
 	<h1> Start Your Search</h1>
+	<div class="row">
 	
 	<%= form_for @search do |f| %>
-  
-  <fieldset id="search">
-    <span class="col1">
-		<%= f.label "Type" %>
-		<%= f.collection_select :category_id, Category.order(:category_name), :id, :category_name, :prompt => "Select All" %>
-    </span>
-    <span class="col2">
-     <%= f.label "Make" %>
-			<%= f.collection_select :brand_id, Brand.order(:brand_name), :id, :brand_name, :prompt => "Select All" %>
-    
-    </span>
-    
-  
-    <span class="col4">    
-		<%= f.label :keyword %>
-		<%= f.text_field :keywords %>
-  	</span>
-  <span class="col1">
-	<%= f.label "Price Range" %>
-			<%= f.collection_select :min_price_id, Minprice.order(:min_price), :id, :min_price, :prompt => "From" %>
-			<br />
-			<%= f.collection_select :max_price_id, Maxprice.order(:id), :id, :max_price, :prompt => "To" %>
-		</span>
-		  <span class="col2">
-		<%= f.check_box :is_new %><label for="news-new">New Campers Only?</label>
-		</span>
-		<span class="col4">
-		<div class="field" style="margin-top:10px"><%= f.submit "Find my RV" %></div>
-		</span>
-<br />
-  </fieldset>
-<% end %>
-
+    <fieldset id="search">
+      <span class="col1">
+        <%= f.label "Type" %>
+        <%= f.collection_select :category_id, Category.order(:category_name), :id, :category_name, :prompt => "Select All" %>
+      </span>
+      <span class="col2">
+        <%= f.label "Make" %>
+        <%= f.collection_select :brand_id, Brand.order(:brand_name), :id, :brand_name, :prompt => "Select All" %>      
+      </span>
+      <span class="col4">
+        <%= f.check_box :is_new %><label for="news-new" class="new_camper">New Campers Only?</label>
+      </span>
+      <span class="col1">
+        <%= f.label "Price Range" %>
+        <%= f.collection_select :min_price_id, Minprice.order(:min_price), :id, :min_price, :prompt => "From" %>
+        <br />
+        <%= f.collection_select :max_price_id, Maxprice.order(:id), :id, :max_price, :prompt => "To" %>
+      </span>
+      <span class="col2">    
+        <%= f.label :keyword %>
+        <%= f.text_field :keywords %>
+      </span>
+      <span class="col4">
+        <div class="field" style="margin-top:30px"><%= f.submit "Find my RV" %></div>
+      </span>
+      <br />
+    </fieldset>
+  <% end %>
+  </div>
 </div>
 </div>

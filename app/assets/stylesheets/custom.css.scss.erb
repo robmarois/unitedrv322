@@ -339,6 +339,62 @@ aside {
   }
 }
 
+
+/* search page */
+
+.search_wrap {
+  height: 600px;
+}
+
+.round {
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+}
+
+.listing_wrapper {
+	padding-top: 20px;
+	height: auto;
+	border: 1px solid #d2d2c4;
+	width: 98%;
+	margin-left: 1%;
+	margin-bottom: 10px;
+}
+
+.listing_wrapper h1 {
+	font-size: 28px;
+	margin-left: 20px;
+	margin-bottom: 10px;
+	color: #717165;
+	text-align: left;
+}
+
+#search .col1 {
+	width: 35%;
+	float: left;
+	display: inline-block;
+	margin-left: 10px;
+	text-transform: capitalize;
+}
+
+#search .col2 {
+	width: 35%;
+	float: left;
+	display: inline-block;
+}
+
+#search .col3 {
+	width: 35%;
+	float: left;
+	display: inline-block;
+}
+
+#search .col4 {
+	width: 25%;
+	float: left;
+}
+
+
 /* forms */
 
 input, textarea, select, .uneditable-input {
@@ -364,6 +420,226 @@ input, textarea, select, .uneditable-input {
  }
 
 
+fieldset#search  { margin: 10px 0 10px 30px; }
+
+#search label { 
+	display: block; 
+	overflow: clear;
+	font: bold 18px "DroidSansBold", Verdana, sans-serif; 
+	line-height: 1.5em; 
+	color: #dc692e;  
+	text-transform: capitalize;
+}
+
+#search fieldset:last-child { margin: 0; }
+
+
+#search fieldset input[type="text"], #sign-up fieldset input[type="email"], #sign-up fieldset input[type="tel"], #sign-up fieldset select  { 
+	width: 250px; 
+	padding: 8px 8px; 
+	font-size: 12px;
+	color: #89897e; 
+	border: 1px solid #e5e5dd; 
+	background: #f4f4ed; 
+	-webkit-border-radius: 5px; 
+	-moz-border-radius: 5px; 
+	-o-border-radius: 5px; 
+	border-radius: 5px; }
+	
+#search fieldset input[type="email"], #search fieldset input[type="tel"], #search select  { 
+	width: 250px; 
+	padding: 8px 8px; 
+	font-size: 12px;
+	color: #89897e; 
+	border: 1px solid #e5e5dd; 
+	background: #f4f4ed; 
+	-webkit-border-radius: 5px; 
+	-moz-border-radius: 5px; 
+	-o-border-radius: 5px; 
+	border-radius: 5px;
+}
+
+#search input[type="text"] {
+	width: 230px; 
+	padding: 8px 8px; 
+	font-size: 12px;
+	color: #89897e; 
+	border: 1px solid #e5e5dd; 
+	background: #f4f4ed; 
+	-webkit-border-radius: 5px; 
+	-moz-border-radius: 5px; 
+	-o-border-radius: 5px; 
+	border-radius: 5px;
+}
+
+#search input[type="checkbox"] {
+	display: inline;
+	margin-top: 30px;
+}
+
+#search label.new_camper {
+  display: inline;
+  margin-top: 20px;
+  padding-left: 5px;
+}
+	
+#search fieldset input[type="radio"] { 
+	width: 25px; 
+	font-size: 12px;
+	color: #89897e; 
+	background: #f4f4ed; 
+	display: inline;
+ }
+
+#search input[type="submit"] {
+	float: right;
+	margin-right: 10px;
+	padding: 8px 15px;
+	font: bold 12px "DroidSansBold", Verdana, sans-serif;
+	text-transform: uppercase;
+	line-height: 1;
+	color: #787871;
+	text-shadow: 1px 1px 1px #fff;
+	border: none;
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#E2E2D9), to(#BDBDB5)); 
+	background-image: -moz-linear-gradient(19% 75% 90deg,#BDBDB5, #E2E2D9);
+	background-color: #e2e2d9;
+	-webkit-border-radius: 8px; 
+	-moz-border-radius: 8px; 
+	-o-border-radius: 8px; 
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+.search_results {
+	font-size: 28px;
+	margin-left: 30px;
+	margin-bottom: 20px;
+	color: #717165;
+	text-align: left;
+}
+
+
+/* search results */
+
+.camper_listing {
+	background: #efefed;
+	border: 1px solid #c0c0c0;
+	height: 100%;
+	padding-bottom: 20px;
+	width: 98%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+	clear: both;
+}
+
+
+
+.listing_pic {
+	float: left;
+	width: 180px;
+	height: 150px;
+	display: inline;
+	margin: 15px;
+}
+
+.listing_pic img {
+	float: left;
+	border: 5px solid #fafaf6;
+	-webkit-box-shadow: 0px 3px 3px #B2B4B4;
+	-moz-box-shadow: 0px 3px 3px #B2B4B4;
+	box-shadow: 0px 3px 3px #B2B4B4;
+}
+
+.listing_details {
+	text-align: left;
+	width: 500px;
+	height: 100%;
+	display: inline;
+	margin: 15px;
+	font-size: 14px;
+	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+	color: #6a6a5d;
+}
+
+.listing_details h2 {
+	padding-bottom: 8px;
+	color: #0054a6;
+	font: bold 24px "Lucida Grande", Lucida, Verdana, sans-serif;
+}
+
+.listing_details div span {
+	color: #6a6a5d;
+}
+
+.listing_details .col1 {
+	width: 20%;
+	float: left;
+	display: inline-block;
+}
+
+.listing_details .col2 {
+	width: 20%;
+	float: left;
+	display: inline-block;
+}
+
+.listing_details .col3 {
+	width: 30%;
+	float: right;
+	display: inline-block;
+}
+
+.listing_details .features {
+	font-size: 14px;
+	text-align: left;
+	overflow: clear;
+	margin-top: 50px;
+	margin-right: 150px;
+	padding-bottom: 10px;
+	height: 100%;
+}
+
+.listing_price {
+	margin: 15px;
+	height: 150px;
+	float: right;
+	display: inline;
+}
+
+.listing_price .price {
+	text-align: right;
+	color: #000;
+	font-size: 24px;
+}
+
+.listing_price input[type="submit"] {
+	float: right;
+	margin-right: 10px;
+	margin: 30px 0px 10px 0px;
+	padding: 8px 15px;
+	font: bold 18px "DroidSansBold", Verdana, sans-serif;
+	text-transform: uppercase;
+	line-height: 1;
+	color: #fff;
+	text-shadow: 1px 1px 1px #111;
+	border: none;
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#2c99e9), to(#2a32eb)); 
+	background-image: -moz-linear-gradient(19% 75% 90deg,#2c99e9, #2a32eb);
+	background-color: #2a32eb;
+	-webkit-border-radius: 8px; 
+	-moz-border-radius: 8px; 
+	-o-border-radius: 8px; 
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+.listing_price input[type="submit"]:hover {
+	-webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, .4); 
+	-moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, .4);
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, .4);
+}
  
  /* users index */
 
