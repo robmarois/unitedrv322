@@ -40,5 +40,17 @@ class Camper < ActiveRecord::Base
 	has_many :specials
 	has_many :attachments, :as => :attachable
 	
+	after_save :set_photo
+	
 	accepts_nested_attributes_for :attachments, :reject_if=> proc {|attributes| attributes[:file].blank?}, :allow_destroy => true
+	
+	private
+	def set_photo
+	  if attachment_id.nil?
+	    if !Attachment.first.nil? 
+	    photo = self.attachments.first.id
+      self.update_attributes(:attachment_id => photo)
+      end
+    end
+	end
 end

@@ -1,8 +1,5 @@
-<h1>United RV</h1>
-
-
 <div class = "banner_listing ">
-	<img src="images/bestofthebest.png">
+  <%= image_tag "bestofthebest.png" %>
 	<h2>Thank you for nominating us for the Best of the Best 2012! </h2><a href="/news" style="text-decoration:underline">View recent news</a>
 
 </div>
@@ -10,7 +7,7 @@
 
 
 	<section id="promotional" class="row span4">
-		<ul class="polaroids" style="width:300px;">
+		<ul class="polaroids" style="width:280px;">
 		<li>
 		<a title="Hiking in Yellowstone"><%= image_tag "rvfeatured.jpg" %></a>
 		</li>
@@ -25,7 +22,7 @@
 		</li>
 		</ul>
 		
-		<div id="selections" class="span4">
+		<div id="selections">
 		<h2>Search Our Inventory</h2>
 			<%= form_for @search do |f| %>
 		  
@@ -58,8 +55,8 @@
 	
 	</section>
 	
-	<div id=" row blocks">
-		<!-- BEGIN LATEST NEWS -->
+	<div id="blocks">
+		
 		<section id="news" class="box span3">
 			<header><h1 class="script">Latest Additions</h1></header>
 				<% @feed_items.each do |f| %>

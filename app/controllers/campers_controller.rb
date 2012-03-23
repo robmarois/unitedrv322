@@ -2,6 +2,11 @@ class CampersController < ApplicationController
 
   before_filter :authenticate, :only => [:create, :edit, :update, :destroy]
   
+  def index
+    @camper = Camper.all
+    @search = Search.new
+  end
+  
   def new
     @camper = Camper.new
   end
