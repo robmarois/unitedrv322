@@ -1,5 +1,5 @@
 class QuestionMailer < ActionMailer::Base
-  default from: "rmarois@gmail.com"
+  default from: "unitedrv.email@gmail.com"
   
   def support_email(question)
     @question = question
@@ -8,6 +8,6 @@ class QuestionMailer < ActionMailer::Base
   
   def prospect_message(prospect)
   	@prospect = prospect
-    mail(:to => @prospect.email, :subject => "A new message is ready", :from => "rmarois@gmail.com")
+    mail(:to => @prospect.email, :subject => "A new message is ready", :from => "unitedrv.email@gmail.com")
   end
 end

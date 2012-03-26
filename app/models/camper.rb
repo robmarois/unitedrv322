@@ -38,7 +38,7 @@ class Camper < ActiveRecord::Base
 	belongs_to :engine
 	
 	has_many :specials
-	has_many :attachments, :as => :attachable
+	has_many :attachments, :as => :attachable, dependent: :destroy
 	
 	after_save :set_photo
 	

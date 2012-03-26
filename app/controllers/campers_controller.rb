@@ -1,6 +1,6 @@
 class CampersController < ApplicationController
 
-  before_filter :authenticate, :only => [:create, :edit, :update, :destroy]
+  before_filter :authenticate, :only => [:new, :create, :edit, :update, :destroy]
   
   def index
     @camper = Camper.all

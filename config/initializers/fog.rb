@@ -2,9 +2,9 @@
 
 
 CarrierWave.configure do |config|
-      config.s3_access_key_id = "0N32ZH1TB8N1VEVXMQR2"
-      config.s3_secret_access_key = "OTiKz9yH8VpGzbhPR5LmDBcyEl2d+LJRKKtMTsb3"
-      config.s3_bucket = "unitedrv"
+      config.s3_access_key_id = "AKIAIRGQJ37RAEJTCRQA"
+      config.s3_secret_access_key = "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"
+      config.s3_bucket = "united_rv"
     end
     
     
@@ -15,6 +15,6 @@ CarrierWave.configure do |config|
   config.fog_credentials = {
       :provider => 'AWS'
   }
-  config.fog_directory = "unitedrv" # required
+  config.fog_directory = "united_rv" # required
   
 end

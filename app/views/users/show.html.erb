@@ -1,27 +1,39 @@
 <% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="span4">
-    <section>
-      <h1>
-        <%= @user.name %>
-      </h1>
-    </section>
-  </aside>
-  <div class="profile">
-<span>
-<h2>User Profile Page</h2><br />
-<%= @user.name %>, welcome. You are now signed-in.<br /><br />
-<%= link_to "Change your user name, email or password", edit_user_path(current_user) %><br /><br />
-<%= link_to "Create a new listing", new_camper_path %><br /><br />
 
-
-<p>Listing to be shown as "Featured Camper" on the home page:</p>
-<%= form_for @special do |f| %>
-<%= f.select :camper_id, options_from_collection_for_select(Camper.all, :id, :headline, :selected => @special.camper_id),:prompt => 'Select Featured Camper' %>
-<%= f.submit "Update Featured RV" %>
-<% end %>
-
-
-</span>
+<div class="profile">
+  <span>
+    <h2>User Profile and Application Setting Page</h2><br />
+    <%= @user.name %>, welcome. You are now signed-in.<br /><br />
+    <%= link_to "Change your user name, email or password", edit_user_path(current_user) %><br /><br />
+    <%= link_to "Create a new listing", new_camper_path %><br /><br />
+    
+    
+    <p>Listing to be shown as "Featured Camper" on the home page:</p>
+    <%= form_for @special do |f| %>
+      <%= f.select :camper_id, options_from_collection_for_select(Camper.all, :id, :headline, :selected => @special.camper_id),:prompt => 'Select Featured Camper' %>
+      <%= f.submit "Update Featured RV" %>
+      
+    <% end %>
+  <br />
+  <br />
+  <br />
+  <br />
+    <div id="blocks">
+    <section id="specials" class="box span3">
+			<header><h1 class="script">Featured Camper</h1></header>
+			<a href="/campers/<%= @special.camper.id %>">
+			<p><%= truncate(@special.camper.headline, :length => 60) %></p>
+				<% for attachment in @special.camper.attachments %>
+	    <% if attachment.id == @special.camper.attachment_id %>
+		  <%= image_tag attachment.file_url, :class => "price", :title => attachment.description,  :height => 124, :href => attachment.file_url if attachment.file? %>
+	    <% end %>
+	    <% end %>
+	    
+				<p><%= truncate(@special.camper.features, :length => 80) %></p>
+				</a>
+		</section>
+		</div>
+    
+  </span>
 </div>
-</div>
+

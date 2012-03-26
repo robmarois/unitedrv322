@@ -337,7 +337,9 @@ ul.polaroids-page { float: left; width: 940px; margin: 0 0 18px 30px; padding-ri
 	padding-bottom: 113px;
 	padding-right: 30px;
 	margin-left: 20px;
-
+  &.users {
+	float: left;
+	}
 }
 
 #selections h2 {
@@ -351,8 +353,17 @@ ul.polaroids-page { float: left; width: 940px; margin: 0 0 18px 30px; padding-ri
 
 }
 
-#selections .users {
-	float: left;
+
+
+#selections h2 {
+		font: normal 24px "MarketingScriptRegular", Georgia, serif;
+	color: #717165;
+	margin-left: 10px;
+	padding: 5px 0 0 0;
+	border-bottom: 1px solid #ecece9;
+	width: auto;
+	text-align: left;
+
 }
 
 #selections p {
@@ -483,6 +494,8 @@ ul.polaroids-page { float: left; width: 940px; margin: 0 0 18px 30px; padding-ri
 	text-align: left;
 }
 
+
+
 /***** NEWS *****/
 
 .news-item h1 a {
@@ -581,7 +594,8 @@ padding-bottom: 10px;
 	overflow: clear;
 	font: bold 14px "DroidSansBold", Verdana, sans-serif; 
 	line-height: 1.5em; 
-	color: #dc584d;  
+	color: #dc584d;
+	padding-left: 10px;  
 }
 
 #sign-up fieldset:last-child { margin: 0; }
@@ -596,7 +610,9 @@ padding-bottom: 10px;
 	-webkit-border-radius: 5px; 
 	-moz-border-radius: 5px; 
 	-o-border-radius: 5px; 
-	border-radius: 5px; }
+	border-radius: 5px;
+	margin-left: 10px; 
+}
 	
 #sign-up input[type="text"], #sign-up fieldset input[type="email"], #sign-up fieldset input[type="tel"], #sign-up select, #sign-up input[type="password"], #sign-up input[type="number"], #sign-up textarea  { 
 	width: 250px; 
@@ -608,7 +624,9 @@ padding-bottom: 10px;
 	-webkit-border-radius: 5px; 
 	-moz-border-radius: 5px; 
 	-o-border-radius: 5px; 
-	border-radius: 5px; }
+	border-radius: 5px;
+  margin-left: 10px;	
+}
 	
 	
 #sign-up fieldset input[type="radio"] { 
@@ -650,6 +668,9 @@ padding-bottom: 10px;
 	margin-right: -300px;
 	margin-top: -500px;
 }
+
+
+
 /***** FOOTER *****/
 
 #primary-foot {
@@ -736,15 +757,6 @@ padding-bottom: 10px;
 	opacity: .7;
 }
 
-/* debug info */
-
-#debug {
-width: 940px;
-float: left;
-display: block;
-}
-
-/* temporary css from sample app */
 
 /* form fields */
 div.field, div.actions {
@@ -753,13 +765,18 @@ div.field, div.actions {
 
 .field_with_errors {
   margin-top: 10px;
+  margin-bottom: 10px;
   padding: 2px;
-  background-color: red;
   display: table;
+  color: red;
 }
 
 .field_with_errors label {
   color: #fff;
+}
+
+.field_with_errors .message {
+  color: red;
 }
 
 #error_explanation {
@@ -792,6 +809,9 @@ div.field, div.actions {
   list-style: square;
   list-style-type: none;
 }
+
+
+
 
 ul.users {
   margin-top: 1em;
@@ -828,8 +848,6 @@ ul.users {
 	margin-left: 10px;
 	margin-bottom: 20px;
 	color: #717165;
-	
-
 }
 
 .search_wrapper {
@@ -1064,6 +1082,7 @@ ul.users {
 	color: gray;
 }
 
+
 .camper_show_details .col2:hover {
 	color: black;
 }
@@ -1159,7 +1178,7 @@ ul.users {
 
 #camper_blocks section {
 	float: right;
-	width: 290px;
+	width: 310px;
 	height: auto;
 	display: inline;
 	background: #fafaf6;
@@ -1243,16 +1262,12 @@ ul.users {
 .fields {
 	float: left;
 	width: 300px;
-	height: auto;
+	min-height: 200px;
 	display: inline;
 	
 }
 
-#add-link {
-	display: block;
-	clear: both;
-	padding-top: 25px;
-}
+
 
 #add-link a {
 	text-decoration: underline;
@@ -1434,6 +1449,7 @@ ul.users {
 }
 
 /* Contact Us page */
+
 #contact_blocks {
 	float: right;
 	margin-top: -80px;
@@ -1468,6 +1484,36 @@ ul.users {
   text-decoration: underline;
 }
 
+/* Contact Page */
+
+#contact-maps {
+  width: 400px;
+  height: 100%;
+}
+
+#contact-text {
+  width: 300px;
+  float: right;
+}
+
+#sign-up .contact-form {
+margin-left: 100px;
+}
+
+#sign-up .contact-form input[type="text"], #sign-up .contact-form input[type="email"],#sign-up .contact-form textarea {
+  width: 300px;
+}
+
+#newsletter p.contact-form {
+font-size: 18px;
+color: #717165;
+margin-left: 10px;
+padding: 5px 0 0 0;
+width: auto;
+text-align: left;
+font-family: Georgia, serif;
+}
+
 
 /* Debug */
 
@@ -1476,5 +1522,6 @@ ul.users {
   float: left;
   width: 100%;
   margin-top: 45px;
-  @include box_sizing;
 }
+
+

@@ -1,7 +1,5 @@
 <section class="round">
-  		<% flash.each do |key, value| %>
-  		  <%= content_tag(:div, value, :class => "flash #{key}") %>
-		<% end %>
+  		
 </section>
 
 <div class = "camper_show_wrapper">
@@ -91,32 +89,28 @@
 			<header><h1 class="script">Contact us for more info</h1></header>
 		
 			
-			<%= form_for @prospect, :html => {:id => "sign-up"} do |f| %>
+			<%= form_for @prospect, :html => {:id => "sign-up"}, :validate => true do |f| %>
 						<fieldset>
-						<label for="news-name" >Your Name</label>
+						<%= f.label :name %>
+    <%= f.text_field :name, :id=>"news-firstname", :placeholder=>"Your Name" %>
+	
+						 <%= f.label :email %> 
+    <%= f.email_field :email, :id=>"news-email", :placeholder=>"Your Email Address" %>
+
+    <%= f.label :phone %>
+    <%= f.text_field :phone, :id=>"news-phone", :placeholder=>"Your Phone Number (optional)" %>
 						
-						<%= f.text_field :name, :id=>"news-firstname", :placeholder=>"Your Name" %>
-						</fieldset>
-						<fieldset>
-						<label for="news-email" >Email</label> 
-						<%= f.email_field :email, :id=>"news-email", :placeholder=>"Your Email Address" %>
-						</fieldset>
-						<fieldset>
-						<label for="news-email" >Phone</label> 
-						<%= f.text_field :phone, :id=>"news-phone", :placeholder=>"Your Phone Number (optional)" %>
-						</fieldset>
-						<fieldset>
-						<label for="news-email" >Message</label> 
+						<%= f.label "Message" %>
 						<%= f.text_area :comments, :id=>"news-comments", :rows => 4, :placeholder=>"Your Message" %>
-						</fieldset>
+						
 						<%= f.hidden_field :camper_id, {:value => @camper.id } %>
-						<fieldset>
+						
 						<%= f.submit "Submit" %>
 					
 					</fieldset> 
 					<% end %>
-		</form>
-  </section>
+					
+					  </section>
   </div>	
 </div>
 
