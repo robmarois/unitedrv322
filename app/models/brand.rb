@@ -10,4 +10,6 @@
 
 class Brand < ActiveRecord::Base
 	has_many :campers
+	
+	
 end

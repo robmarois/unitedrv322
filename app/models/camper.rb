@@ -26,8 +26,10 @@
 
 class Camper < ActiveRecord::Base
 
-  attr_accessible :headline, :price_now, :year, :length, :ac_units, :slide, :features, :brand_id, :mileage, :stock_number, :category_id, :is_new, :model_id, :status_id, :weight, :engine_id, :attachments_attributes, :attachment_id
+  attr_accessible :headline, :price_now, :year, :length, :ac_units, :slide, :features, :brand_id, :mileage, :stock_number, :category_id, :is_new, :model_id, :status_id, :weight, :engine_id, :attachments_attributes, :attachment_id, :brand_name
+  
 
+  
   validates :price_now, :presence => true 
 	validates :year, :presence => true
 	validates :headline, :presence => true, :length => {:maximum => 100}
@@ -40,17 +42,26 @@ class Camper < ActiveRecord::Base
 	has_many :specials
 	has_many :attachments, :as => :attachable, dependent: :destroy
 	
+	
 	after_save :set_photo
 	
 	accepts_nested_attributes_for :attachments, :reject_if=> proc {|attributes| attributes[:file].blank?}, :allow_destroy => true
 	
+	def brand_name
+    brand.try(:brand_name)
+  end
+  
+  def brand_name=(brand_name)
+    self.brand = Brand.find_or_create_by_brand_name(brand_name) if brand_name.present?
+  end
+	
 	private
-	def set_photo
-	  if attachment_id.nil?
-	    if !Attachment.first.nil? 
-	    photo = self.attachments.first.id
-      self.update_attributes(:attachment_id => photo)
+    def set_photo
+      if attachment_id.nil?
+        if !Attachment.first.nil? 
+        photo = self.attachments.first.id
+        self.update_attributes(:attachment_id => photo)
+        end
       end
     end
-	end
 end

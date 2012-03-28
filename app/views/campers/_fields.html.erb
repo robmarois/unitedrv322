@@ -38,7 +38,8 @@
 		<%= f.text_area :features %>
 	
 		<%= f.label :brand_id %>
-		<%= f.select :brand_id, options_from_collection_for_select( Brand.all, :id, :brand_name, :selected => @camper.brand_id),:prompt => 'Select Brand' %>	
+		
+    <%= f.text_field :brand_name, data: {autocomplete_source: Brand.order(:brand_name).map(&:brand_name)} %>	
 	
 	
 		<%= f.label :category_id %>
