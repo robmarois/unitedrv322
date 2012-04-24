@@ -9,6 +9,7 @@ class CampersController < ApplicationController
   
   def new
     @camper = Camper.new
+    21.times { @camper.attachments.build }
   end
   
   def show
@@ -33,6 +34,8 @@ class CampersController < ApplicationController
   def edit
 		@camper = Camper.find(params[:id])
 		@title = "Edit RV"
+		test = @camper.attachments.count
+		(21-test).times { @camper.attachments.build }
 	end
 	
 	def update

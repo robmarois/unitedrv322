@@ -61,19 +61,21 @@
   <h3>Images</h3>
   <br />
   <div >
-	  <%= f.fields_for :attachments do |attachment_form|  %>
+	  <%= f.fields_for :attachments,:html => { :multipart => true } do |attachment_form|  %>
 		
 		<%= attachment_form.label :description %>
 		<%= attachment_form.text_field :description %>
 		
 		<%= attachment_form.label 'Image' %>
 		<%= image_tag attachment_form.object.file.thumb.url, :class => "group1", :title => attachment_form.object.description, :href => attachment_form.object.file.url if attachment_form.object.file?  %>
-		<%= attachment_form.file_field :file %>
+		<%= attachment_form.file_field :file, { :multiple => true } %>
 		
 		<br />
 		<%= attachment_form.link_to_remove "Remove this image" %>
 		
 	  <% end %>
+	  
+
 	  
 	  </div>
 	    <br />
