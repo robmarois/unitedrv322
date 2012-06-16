@@ -1,20 +1,14 @@
 # ./config/initializers/carrierwave.rb
 
-
 CarrierWave.configure do |config|
-      config.s3_access_key_id = "AKIAIRGQJ37RAEJTCRQA"
-      config.s3_secret_access_key = "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"
-      config.s3_bucket = "united_rv"
-    end
-    
-    
-Fog.credentials_path = Rails.root.join('config/fog_credentials.yml')
-
-CarrierWave.configure do |config|
-  	  config.cache_dir = "#{Rails.root}/tmp/uploads"
   config.fog_credentials = {
-      :provider => 'AWS'
+    :provider               => 'AWS',       # required
+    :aws_access_key_id      => 'AKIAIRGQJ37RAEJTCRQA',       # required
+    :aws_secret_access_key  => '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',       # required
+    :region                 => 'us-east-1'  # optional, defaults to 'us-east-1'
   }
-  config.fog_directory = "united_rv" # required
-  
+  config.fog_directory  = 'united_rv'                     # required
+  config.fog_host       = 'https://assets.example.com'            # optional, defaults to nil
+  config.fog_public     = false                                   # optional, defaults to true
+  config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}  # optional, defaults to {}
 end

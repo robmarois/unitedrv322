@@ -53,7 +53,7 @@
 		
 		<%= f.label 'Choose Main Display Photo' %>
 		<% if @camper.attachment_id? %>
-		<%= f.select :attachment_id, options_from_collection_for_select( Attachment.where("attachable_id = #{params[:id]}"), :id, :description, :selected => @camper.attachment_id),:prompt => 'Select Category' %>	
+		<%= f.select :attachment_id, options_from_collection_for_select( Attachment.where("attachable_id = #{params[:id]}"), :id, :file, :selected => @camper.attachment_id),:prompt => 'Select Category' %>	
 		<% end %> 
 	</div>	
 		
