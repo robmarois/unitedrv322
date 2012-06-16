@@ -1,67 +1,74 @@
 <% provide(:title, 'Contact Us') %>
 	
-	<div id="contact-maps">
-		<ul class="polaroids-page" style="width:400px; background:white;">
-      <li>
-        <a  href="https://maps.google.com/maps?q=952+Industrial+Boulevard,+Ringgold,+GA&hl=en&ll=34.906205,-85.112629&spn=0.039699,0.074501&sll=34.906117,-85.119238&sspn=0.009925,0.018625&hnear=952+Industrial+Blvd,+Ringgold,+Georgia+30736&t=m&z=14" title="Sales Office - Ringgold, Ga" target="_blank">
-        <%= image_tag "map.png" %>
-        </a>		
-      </li>
+<div id="contact-maps">
+	<ul class="polaroids-page" style="width:400px; background:white;">
+    <li>
+      <a  href="https://maps.google.com/maps?q=952+Industrial+Boulevard,+Ringgold,+GA&hl=en&ll=34.906205,-85.112629&spn=0.039699,0.074501&sll=34.906117,-85.119238&sspn=0.009925,0.018625&hnear=952+Industrial+Blvd,+Ringgold,+Georgia+30736&t=m&z=14" title="Sales Office - Ringgold, Ga" target="_blank">
+      <%= image_tag "map.png" %>
+      </a>		
+    </li>
 		<li>
-<a  href="http://maps.google.com/maps?q=607+South+3rd+Avenue+Chatsworth,+GA&hl=en&ll=34.759666,-84.767761&spn=0.029687,0.032659&sll=37.0625,-95.677068&sspn=57.772232,66.884766&hnear=607+S+3rd+Ave,+Chatsworth,+Georgia+30705&t=m&z=15" title="Parts and Service - Chatsworth, GA" target="blank">
-		<%= image_tag "map-chatsworth.jpg" %>
-		</a>		</li>
-		</ul>			
+      <a  href="http://maps.google.com/maps?q=607+South+3rd+Avenue+Chatsworth,+GA&hl=en&ll=34.759666,-84.767761&spn=0.029687,0.032659&sll=37.0625,-95.677068&sspn=57.772232,66.884766&hnear=607+S+3rd+Ave,+Chatsworth,+Georgia+30705&t=m&z=15" title="Parts and Service - Chatsworth, GA" target="blank">
+  		<%= image_tag "map-chatsworth.jpg" %>
+  		</a>		
+    </li>
+	</ul>			
 </div>
 	
 <div id="contact-text">	
 	<div id="selections">
 			<h2>Come See Us</h2>
 			<p>We're easy to find - just off exit 348 on I-75 in Ringgold, Georgia.</p>
-			<p><b>Sales Office - Ringgold</b><br />
-			360 Frontage Rd<br />
-			Ringgold, GA<br />
-			(706) 965-4300<br />
-			<a  href="https://maps.google.com/maps?q=952+Industrial+Boulevard,+Ringgold,+GA&hl=en&ll=34.906205,-85.112629&spn=0.039699,0.074501&sll=34.906117,-85.119238&sspn=0.009925,0.018625&hnear=952+Industrial+Blvd,+Ringgold,+Georgia+30736&t=m&z=14" title="Sales Office - Ringgold, Ga"target="_blank">Directions to the Ringgold Sales Office
-		</a></p>
+			<p>
+        <b>Sales Office - Ringgold</b><br />
+  			360 Frontage Rd<br />
+  			Ringgold, GA<br />
+  			(706) 965-4300<br />
+  			<a href="https://maps.google.com/maps?q=952+Industrial+Boulevard,+Ringgold,+GA&hl=en&ll=34.906205,-85.112629&spn=0.039699,0.074501&sll=34.906117,-85.119238&sspn=0.009925,0.018625&hnear=952+Industrial+Blvd,+Ringgold,+Georgia+30736&t=m&z=14" title="Sales Office - Ringgold, Ga"target="_blank">Directions to the Ringgold Sales Office
+    		</a>
+      </p>
 			<br />
 			<p>For RV parts or service, our office in Chatsworth is also easy to find.</p><br /> 
-			<p><b>Parts and Service Office - Chatsworth</b><br />
-			607 South 3rd Avenue <br />
-			Chatsworth, GA<br />
-			(706) 965-4300<br />
-			<a  href="http://maps.google.com/maps?q=607+South+3rd+Avenue+Chatsworth,+GA&hl=en&ll=34.759666,-84.767761&spn=0.029687,0.032659&sll=37.0625,-95.677068&sspn=57.772232,66.884766&hnear=607+S+3rd+Ave,+Chatsworth,+Georgia+30705&t=m&z=15" title="Parts and Service - Chatsworth, GA" target="blank">
-		Directions to the Chatsworth Service Center
-      </a></p>
+			<p>
+        <b>Parts and Service Office - Chatsworth</b><br />
+  			607 South 3rd Avenue <br />
+  			Chatsworth, GA<br />
+  			(706) 965-4300<br />
+  			<a href="http://maps.google.com/maps?q=607+South+3rd+Avenue+Chatsworth,+GA&hl=en&ll=34.759666,-84.767761&spn=0.029687,0.032659&sll=37.0625,-95.677068&sspn=57.772232,66.884766&hnear=607+S+3rd+Ave,+Chatsworth,+Georgia+30705&t=m&z=15" title="Parts and Service - Chatsworth, GA" target="blank">
+    		Directions to the Chatsworth Service Center
+        </a>
+      </p>
     
 <br />
 
-<section id="newsletter" class="box box-right">
-  <header><h1 class="script">Have A Question?</h1></header>
-  
-  <p class="contact-form">Have a question about our location or services, or just a comment about the site? </p>
-  <p class="contact-form">Drop us a note below. <p>
-  
-  <%= form_for @question, :html => {:id => "sign-up"}, :validate => true do |f| %>
-  <fieldset class="contact-form">
-    <%= f.label :name %>
-    <%= f.text_field :name, :id=>"news-firstname", :placeholder=>"Your Name" %>
+    <section id="newsletter" class="box box-right">
+      <header>
+        <h1 class="script">Have A Question?</h1>
+      </header>
+      
+      <p class="contact-form">Have a question about our location or services, or just a comment about the site? </p>
+      <p class="contact-form">Drop us a note below. <p>
+      
+      <%= form_for @question, :html => {:id => "sign-up"}, :validate => true do |f| %>
+        <fieldset class="contact-form">
+        <%= f.label :name %>
+        <%= f.text_field :name, :id=>"news-firstname", :placeholder=>"Your Name" %>
 
-    <%= f.label :email %> 
-    <%= f.email_field :email, :id=>"news-email", :placeholder=>"Your Email Address" %>
+        <%= f.label :email %> 
+        <%= f.email_field :email, :id=>"news-email", :placeholder=>"Your Email Address" %>
 
-    <%= f.label :phone %>
-    <%= f.text_field :phone, :id=>"news-phone", :placeholder=>"Your Phone Number (optional)" %>
+        <%= f.label :phone %>
+        <%= f.text_field :phone, :id=>"news-phone", :placeholder=>"Your Phone Number (optional)" %>
 
-    <%= f.label :question %>
-    <%= f.text_area :question, :id=>"news-comments", :rows => 4, :placeholder=>"Your Question" %>
-    <br />
-    <br />
-    <%= f.submit "Submit" %>    
-    </fieldset>
+        <%= f.label :question %>
+        <%= f.text_area :question, :id=>"news-comments", :rows => 4, :placeholder=>"Your Question" %>
+        <br />
+        <br />
+        <%= f.submit "Submit" %>    
+        </fieldset>
 
-  <% end %>
-</section> 
+      <% end %>
+    </section> 
 
-</div>
+  </div>
 </div>

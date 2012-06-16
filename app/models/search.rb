@@ -19,11 +19,11 @@ private
     	campers = campers.where("headline like ?", "%#{word}%")
     end
     
-    campers = campers.where(brand_id: brand_id) if brand_id.present?
+    # campers = campers.where(brand_id: brand_id) if brand_id.present?
     campers = campers.where(category_id: category_id) if category_id.present?
-    campers = campers.where("price_now >= ?", (min_price_id * 10000 -10000)) if min_price_id.present?
-    campers = campers.where("price_now <= ?", max_price_id * 10000) if max_price_id.present?
-    campers = campers.where("is_new == ?", is_new) if is_new.present?
-    campers
+    # campers = campers.where("price_now >= ?", (min_price_id * 10000 -10000)) if min_price_id.present?
+    # campers = campers.where("price_now <= ?", max_price_id * 10000) if max_price_id.present?
+    # campers = campers.where("is_new == ?", is_new) if is_new.present?
+    # campers
   end
 end

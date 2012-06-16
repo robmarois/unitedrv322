@@ -4,52 +4,40 @@
 
 </div>
 
-
-
 	<section id="promotional">
 		<ul class="polaroids" style="width:260px;">
-		<li>
-		<a title="Hiking in Yellowstone"><%= image_tag "rvfeatured.jpg" %></a>
-		</li>
-		<li class="messy1">
-		<a title="Family Reunion"><%= image_tag "rv2.jpg" %></a>
-		</li>
-		<li class="messy">
-		<a title="Smokies Camping Trip"><%= image_tag "rv3.jpg" %></a>
-		</li>
-		<li class="messy2">
-		<a title="Heading to the Coast"><%= image_tag "rv4.jpg" %></a>
-		</li>
+			<li>
+				<a title="Hiking in Yellowstone"><%= image_tag "rvfeatured.jpg" %></a>
+			</li>
+			<li class="messy1">
+				<a title="Family Reunion"><%= image_tag "rv2.jpg" %></a>
+			</li>
+			<li class="messy">
+				<a title="Smokies Camping Trip"><%= image_tag "rv3.jpg" %></a>
+			</li>
+			<li class="messy2">
+				<a title="Heading to the Coast"><%= image_tag "rv4.jpg" %></a>
+			</li>
 		</ul>
 		
 		<div id="selections">
-		<h2>Search Our Inventory</h2>
-			<%= form_for @search do |f| %>
-		  
-		  <fieldset id="search">
-			<p>
-			<%= f.label "Camper Type" %>
-			<%= f.collection_select :category_id, Category.order(:category_name), :id, :category_name, :prompt => "Show All Types" %>
-			</p>
-			<p>
-			<%= f.label "Make" %>
-			<%= f.collection_select :brand_id, Brand.order(:brand_name), :id, :brand_name, :prompt => "Show All Brands" %>
-			</p>
-			<p>
-			<%= f.label "Keyword (optional)" %>
-			<%= f.text_field :keywords %>
-			</p>
-			<p>
-			<%= f.label "Price Range (optional)" %>
-			<%= f.collection_select :min_price_id, Minprice.order(:min_price), :id, :min_price, :prompt => "From" %>
-			
-			<%= f.collection_select :max_price_id, Maxprice.order(:id), :id, :max_price, :prompt => "To" %>
-			</br>
-			<%= f.check_box :is_new %><label for="news-new">Show Only New Campers?</label>
-			
-		  <div class="actions"><%= f.submit "Find my RV" %></div>
-		  </fieldset>
+			<h2>Search Our Inventory</h2>
+				<%= form_for @search do |f| %>
+			  
+			  <fieldset id="search">
+				<p>
+				<%= f.label "Camper Type" %>
+				<%= f.collection_select :category_id, Category.order(:category_name), :id, :category_name, :prompt => "Show All Types" %>
+				</p>
 				
+				<p>
+				<%= f.label "Keyword (optional)" %>
+				<%= f.text_field :keywords %>
+				</p>
+								
+			  <div class="actions"><%= f.submit "Find my RV" %></div>
+			  </fieldset>
+					
 		<% end %>
 		</div>
 	
@@ -58,60 +46,64 @@
 	<div id="blocks">
 		
 		<section id="news" class="box span3">
-			<header><h1 class="script">Latest Additions</h1></header>
-				<% @feed_items.each do |f| %>
+			<header>
+				<h1 class="script">Latest Additions</h1>
+			</header>
+			<% @feed_items.each do |f| %>
 				<article class="news-item">
-				<header>
-				<h1><a href="/campers/<%= f.id %>"><%= truncate(f.headline, :length => 42) %></a></h1>
-				</header>	
-				<p><time datetime="2011-01-26" pubdate><%= f.created_at.time.to_formatted_s(:long_ordinal)  %></time> 				</p>
-			</article>
-			
+					<header>
+						<h1>
+							<a href="/campers/<%= f.id %>"><%= truncate(f.headline, :length => 42) %></a>
+						</h1>
+					</header>	
+					<p><time datetime="2011-01-26" pubdate><%= f.created_at.time.to_formatted_s(:long_ordinal)  %></time></p>
+				</article>
 			<% end %>
 		</section>
 
 		<section id="specials" class="box span3">
-			<header><h1 class="script">Featured Camper</h1></header>
+			<header>
+				<h1 class="script">Featured Camper</h1>
+			</header>
 			<a href="/campers/<%= @special.camper.id %>">
 			<p><%= truncate(@special.camper.headline, :length => 60) %></p>
-				<% for attachment in @special.camper.attachments %>
-	    <% if attachment.id == @special.camper.attachment_id %>
-		  <%= image_tag attachment.file_url, :class => "price", :title => attachment.description,  :href => attachment.file_url if attachment.file? %>
-	    <% end %>
+			
+			<% for attachment in @special.camper.attachments %>
+		    <% if attachment.id == @special.camper.attachment_id %>
+				  <%= image_tag attachment.file_url, :class => "price", :title => attachment.description,  :href => attachment.file_url if attachment.file? %>
+		    <% end %>
 	    <% end %>
 	    
 				<p><%= truncate(@special.camper.features, :length => 80) %></p>
-				</a>
+			</a>
 		</section>
 
 		<section id="newsletter" class="span3 box box-right">
-			<header><h1 class="script">Newsletter Sign-up</h1></header>
-				<p>Be the first to find out about new inventory!</p>
-				<%= form_for @subscriber, :html => {:id => "sign-up"} do |f| %>
-						<fieldset>
-						<label for="news-name" >Name</label>
-						
-						<%= f.text_field :name, :id=>"news-name", :placeholder=>"Your Name" %>
-						</fieldset>
-						<fieldset>
-					
-						<label for="news-email" >Email</label> 
-						
-						<%= f.email_field :email, :id=>"news-email", :placeholder=>"Your Email Address" %>
-						</fieldset>
-						<fieldset>
-						<%= f.submit "Sign up" %>
-					
-						
-					</fieldset> 
-					<p class="privacy">Our customers matter to us. <br />We'll never sell or share your info with others.</p>
-					
-					<% end %>
+			<header>
+				<h1 class="script">Newsletter Sign-up</h1>
+			</header>
+			<p>Be the first to find out about new inventory!</p>
+			<%= form_for @subscriber, :html => {:id => "sign-up"} do |f| %>
+				<fieldset>
+				<label for="news-name" >Name</label>
+				<%= f.text_field :name, :id=>"news-name", :placeholder=>"Your Name" %>
+				</fieldset>
+
+				<fieldset>
+				<label for="news-email" >Email</label> 
+				<%= f.email_field :email, :id=>"news-email", :placeholder=>"Your Email Address" %>
+				</fieldset>
+
+				<fieldset>
+				<%= f.submit "Sign up" %>
+				</fieldset> 
+
+				<p class="privacy">Our customers matter to us. <br />We'll never sell or share your info with others.</p>
 				
-			
+			<% end %>
+				
 		</section>
 
-	
 	</div>
 
 
