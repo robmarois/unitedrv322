@@ -3,19 +3,19 @@
 </section>
 
 <div class = "camper_show_wrapper">
- <div class = "camper_show_listing round">
-	<h2 class="camper_show_headline"><%= @camper.headline %></h2>
-	<% if signed_in? %>
-	<%= link_to "edit RV", edit_camper_path %>
-	<% end %>
+	<div class = "camper_show_listing round">
+		<h2 class = "camper_show_headline">
+			<%= @camper.headline %>
+		</h2>
+			<% if signed_in? %>
+				<%= link_to "edit RV", edit_camper_path %>
+			<% end %>
 	  <div class="camper_show_picture">
-	    
 	     <% for attachment in @camper.attachments %>
-	    <% if attachment.id == @camper.attachment_id %>
-		  <%= image_tag attachment.file_url, :class => "group1", :title => attachment.description, :width => 450, :href => attachment.file_url if attachment.file? %>
+		    <% if attachment.id == @camper.attachment_id %>
+				  <%= image_tag attachment.file_url, :class => "group1", :title => attachment.description, :width => 450, :href => attachment.file_url if attachment.file? %>
+		    <% end %>
 	    <% end %>
-	    <% end %>
-	     
 	  </div>
 	  <div class="camper_show_details"><br />
 		  <span class="price"><%= number_to_currency(@camper.price_now, :unit => "$") %></span>
@@ -46,72 +46,54 @@
 		  </p>
 		  <p>
 		  <span class="col1">Engine:</span><span class="col2"><%= @camper.engine.engine_type %></span>	
-		  
-		  	
 		  </p><br />
 		  <span class="features"><%= @camper.features %></span>
-		  
-	    	
-	  </div>
-	  
-	  
- 
-  </div>
-  
+		</div>
+	</div>
   
   <div id="camper_photos">
-  	<section  class="box"><header><h1 class="script">Additional Photos</h1>
-  	</header>
-	<br />
-	
-	 <% for attachment in @camper.attachments %>
-		  <%= image_tag attachment.file_url(:thumb), :class => "group1", :title => attachment.description, :href => attachment.file_url if attachment.file? %>
-		  
-		  
-		  
-	  <% end %>
-		  
-		  
-	  
-	
-	
-	
-	
-	</section>
-	
-	
+  	<section  class="box">
+  		<header>
+  			<h1 class="script">Additional Photos</h1>
+	  	</header>
+			<br />
+			
+			<% for attachment in @camper.attachments %>
+			  <%= image_tag attachment.file_url(:thumb), :class => "group1", :title => attachment.description, :href => attachment.file_url if attachment.file? %>
+		  <% end %>
+		</section>
 	</div>
  
-		<div id="camper_blocks">
-
+	<div id="camper_blocks">
+		<section id="newsletter" class="box box-right">
+			<header>
+				<h1 class="script">Contact us for more info</h1>
+			</header>
 	
-	<section id="newsletter" class="box box-right">
-			<header><h1 class="script">Contact us for more info</h1></header>
-		
-			
 			<%= form_for @prospect, :html => {:id => "sign-up"}, :validate => true do |f| %>
-						<fieldset>
-						<%= f.label :name %>
-    <%= f.text_field :name, :id=>"news-firstname", :placeholder=>"Your Name" %>
-	
-						 <%= f.label :email %> 
-    <%= f.email_field :email, :id=>"news-email", :placeholder=>"Your Email Address" %>
+				<fieldset>
+					<%= f.label :name %>
+			    <%= f.text_field :name, :id=>"news-firstname", :placeholder=>"Your Name" %>
 
-    <%= f.label :phone %>
-    <%= f.text_field :phone, :id=>"news-phone", :placeholder=>"Your Phone Number (optional)" %>
-						
-						<%= f.label "Message" %>
-						<%= f.text_area :comments, :id=>"news-comments", :rows => 4, :placeholder=>"Your Message" %>
-						
-						<%= f.hidden_field :camper_id, {:value => @camper.id } %>
-						
-						<%= f.submit "Submit" %>
+					<%= f.label :email %> 
+			    <%= f.email_field :email, :id=>"news-email", :placeholder=>"Your Email Address" %>
+
+			    <%= f.label :phone %>
+			    <%= f.text_field :phone, :id=>"news-phone", :placeholder=>"Your Phone Number (optional)" %>
 					
-					</fieldset> 
-					<% end %>
+					<%= f.label "Message" %>
+					<%= f.text_area :comments, :id=>"news-comments", :rows => 4, :placeholder=>"Your Message" %>
 					
-					  </section>
+					<%= f.hidden_field :camper_id, {:value => @camper.id } %>
+					
+					<%= f.submit "Submit" %>
+				</fieldset> 
+			<% end %>
+		</section>
   </div>	
+  <div class="disclaimer">
+  Disclaimer: Prices listed on http://www.brockmansrv.com/ are subject to change without notice. Brockman's RV does not guarantee the accuracy of the listed prices and reserves the right to refuse inaccurate price listings.
+	</div>
 </div>
 
 <div id="cboxOverlay" style="opacity: 1; cursor: auto; display: none; "></div>
