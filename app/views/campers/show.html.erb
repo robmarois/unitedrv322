@@ -47,7 +47,7 @@
 		  <p>
 		  <span class="col1">Engine:</span><span class="col2"><%= @camper.engine.engine_type %></span>	
 		  </p><br />
-		  <span class="features"><%= @camper.features %></span>
+		  <span class="features"><%= @camper.features.html_safe %></span>
 		</div>
 	</div>
   
