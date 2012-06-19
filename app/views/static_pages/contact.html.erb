@@ -45,9 +45,10 @@
       <header>
         <h1 class="script">Have A Question?</h1>
       </header>
-      
-      <p class="contact-form">Have a question about our location or services, or just a comment about the site? </p>
-      <p class="contact-form">Drop us a note below. <p>
+      <div class="contact-form">
+      <p>Have a question about our location or services, or just a comment about the site? </p>
+      <p>Drop us a note below. <p>
+      </div>
       
       <%= form_for @question, :html => {:id => "sign-up"}, :validate => true do |f| %>
         <fieldset class="contact-form">
