@@ -47,7 +47,7 @@
 	
 	<div id="blocks">
 		
-		<section id="news" class="box span3">
+		<section id="news" class="box">
 			<header>
 				<h1 class="script">Latest Additions</h1>
 			</header>
@@ -63,7 +63,7 @@
 			<% end %>
 		</section>
 
-		<section id="specials" class="box span3">
+		<section id="specials" class="box">
 			<header>
 				<h1 class="script">Featured Camper</h1>
 			</header>
@@ -80,7 +80,7 @@
 			</a>
 		</section>
 
-		<section id="newsletter" class="span3 box box-right">
+		<section id="newsletter" class="box box-right">
 			<header>
 				<h1 class="script">Newsletter Sign-up</h1>
 			</header>
@@ -89,14 +89,10 @@
 				<fieldset>
 				<label for="news-name" >Name</label>
 				<%= f.text_field :name, :id=>"news-name", :placeholder=>"Your Name" %>
-				</fieldset>
-
-				<fieldset>
+				
 				<label for="news-email" >Email</label> 
 				<%= f.email_field :email, :id=>"news-email", :placeholder=>"Your Email Address" %>
-				</fieldset>
-
-				<fieldset>
+				
 				<%= f.submit "Sign up" %>
 				</fieldset> 
 

@@ -7,7 +7,7 @@ class QuestionsController < ApplicationController
     respond_to do |format|
       if @question.save
         QuestionMailer.support_email(@question).deliver
-        format.html { redirect_to(contact_path, :notice => 'Question was successfully sent.') }
+        format.html { redirect_to(contact_path, :notice => 'Your question was sent and someone will reply shortly. Thank you!') }
         format.xml  { render :xml => @question, :status => :created, :location => @question }
       else
         @question.errors.full_messages.each do |msg| 
