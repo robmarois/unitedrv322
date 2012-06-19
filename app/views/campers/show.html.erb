@@ -29,24 +29,22 @@
 			<span class="col3">Year:</span><span class="col4"><%= @camper.year %></span>
 		  </p>
 		  <p>
-			<span class="col1">Model:</span><span class="col2">Chalet</span>			
+			<span class="col1">A/C:</span><span class="col2"><%= pluralize(@camper.ac_units, "unit") %></span>
 			<span class="col3">Length:</span><span class="col4"><%= @camper.length %></span>
 		  </p>
 		  <p>
-			<span class="col1">A/C:</span><span class="col2"><%= pluralize(@camper.ac_units, "unit") %></span>			
+			<span class="col1">Slides:</span><span class="col2"><%= @camper.slide %></span>			
 			<span class="col3">Stock #:</span><span class="col4"><%= @camper.stock_number %></span>
 		  </p>
 		  <p>
-			<span class="col1">Slides:</span><span class="col2"><%= @camper.slide %></span>
+			<span class="col1">Weight:</span><span class="col2"><%= @camper.weight %></span>
 			<span class="col3">New:</span><span class="col4"><% if @camper.is_new == true %> Yes <% else %> No <% end %></span>			
 		  </p>
 		  <p>
-		  <span class="col1">Weight:</span><span class="col2"><%= @camper.weight %></span>	
+		  <span class="col1">Engine:</span><span class="col2"><%= @camper.engine.engine_type %></span>
 		  <span class="col3">Status:</span><span class="col4"><%= @camper.status.status %></span>	
 		  </p>
-		  <p>
-		  <span class="col1">Engine:</span><span class="col2"><%= @camper.engine.engine_type %></span>	
-		  </p><br />
+		  <br />
 		  <span class="features"><%= @camper.features.html_safe %></span>
 		</div>
 	</div>
