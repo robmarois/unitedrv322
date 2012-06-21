@@ -41,6 +41,7 @@ class Camper < ActiveRecord::Base
 	
 	has_many :specials
 	has_many :attachments, :as => :attachable, dependent: :destroy
+  has_many :prospects
 	
 	
 	after_save :set_photo

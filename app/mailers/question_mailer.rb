@@ -8,6 +8,6 @@ class QuestionMailer < ActionMailer::Base
   
   def prospect_message(prospect)
   	@prospect = prospect
-    mail(:to => @prospect.email, :subject => "A new message is ready", :from => "unitedrv.email@gmail.com")
+    mail(:to => @prospect.email, :subject => @prospect.camper.headline, :from => "unitedrv.email@gmail.com")
   end
 end
