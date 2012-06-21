@@ -12,15 +12,13 @@
     <% if Rails.env.production? %>
       <%= render :partial => 'layouts/ga' %>
     <%end%>
-    
+
     <script>
       jQuery(document).ready(function () {
           jQuery('img.group1').colorbox({ opacity:0.5 , rel:'group1' });
       });
     </script>
 
-    <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')
-    </script>
   </head>
   <body>
     <div id="background">
