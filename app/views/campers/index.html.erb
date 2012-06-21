@@ -10,7 +10,7 @@
           <%= f.collection_select :category_id, Category.order(:category_name), :id, :category_name, :include_blank => "Select All" %>
         </span>
         <span class="col2">    
-          <%= f.label :keyword %>
+          <%= f.label "Keyword (optional)" %>
           <%= f.text_field :keywords %>
         </span>
         <span class="col4">
