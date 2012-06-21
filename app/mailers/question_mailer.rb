@@ -3,11 +3,15 @@ class QuestionMailer < ActionMailer::Base
   
   def support_email(question)
     @question = question
-    mail(:to => "rmarois@gmail.com", :subject => "Question")
+    mail(:to => ["rmarois@gmail.com","ksgilley09@yahoo.com","urvcenters@yahoo.com"], 
+         :subject => "Support Question from the United RV website")
   end
   
   def prospect_message(prospect)
   	@prospect = prospect
-    mail(:to => @prospect.email, :subject => @prospect.camper.headline, :from => "unitedrv.email@gmail.com")
+    mail(:to => ["rmarois@gmail.com", "ksgilley09@yahoo.com", 
+                 "urvcenters@yahoo.com"], 
+         :subject => @prospect.camper.headline, 
+         :from => "unitedrv.email@gmail.com")
   end
 end
