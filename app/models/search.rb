@@ -16,7 +16,7 @@ private
     keyword_split = keywords.split(' ')
     	
 	  keyword_split.each do |word|
-    	campers = campers.where("headline ILIKE ?", "%#{word}%")
+    	campers = campers.where("headline ILIKE ?", "%#{word}%") | campers.where("features ILIKE ?", "%#{word}%")
     end
     
     # campers = campers.where(brand_id: brand_id) if brand_id.present?
