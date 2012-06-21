@@ -23,7 +23,7 @@
 
 
   <% if @search.campers.count == 0 %>
-    <h1 class="search_results">Sorry, we did not find a match for your search results.</h1>
+    <h1 class="search_results no_results">Sorry, we did not find a match for your search.</h1>
   <% else %>
     <h1 class="search_results">Search Results</h1>
     <%= render @search.campers %>
