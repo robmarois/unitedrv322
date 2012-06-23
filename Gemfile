@@ -12,6 +12,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
 gem 'nested_form'
+gem 'sitemap_generator'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

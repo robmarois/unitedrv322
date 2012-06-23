@@ -176,6 +176,8 @@ GEM
       libwebsocket (~> 0.1.3)
       multi_json (~> 1.0)
       rubyzip
+    sitemap_generator (3.1.1)
+      builder
     spork (0.9.0)
     sprockets (2.1.3)
       hike (~> 1.2)
@@ -224,6 +226,7 @@ DEPENDENCIES
   rb-fsevent (= 0.9.1)
   rspec-rails (= 2.10.0)
   sass-rails (= 3.2.4)
+  sitemap_generator
   spork (= 0.9.0)
   sqlite3 (= 1.3.5)
   uglifier (= 1.2.3)
