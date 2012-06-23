@@ -19,7 +19,7 @@
       <span class="col2">Length: <%= camper.length %> Feet</span>
       <span class="col3">Model: Chalet</span>
     </p>
-    <p class="features"><%= truncate(camper.features, :length => 180) %></p>
+    <p class="features"><%= strip_tags(truncate(camper.features, :length => 180)) %></p>
   </div>
   
   <div class = "listing_price">
