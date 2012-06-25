@@ -10,10 +10,9 @@ class QuestionMailer < ActionMailer::Base
   
   def prospect_message(prospect)
   	@prospect = prospect
-    mail(:to => ["ksgilley09@yahoo.com", 
-                 "urvcenters@yahoo.com"], 
+    mail(:to => ["rmarois@gmail.com"], 
          :subject => @prospect.camper.headline,
          :bcc => "rmarois@gmail.com", 
-         :from => "unitedrv.email@gmail.com")
+         :reply_to => @prospect.email)
   end
 end
