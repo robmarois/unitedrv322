@@ -76,7 +76,7 @@
 		    <% end %>
 	    <% end %>
 	    
-				<p><%= truncate(@special.camper.features, :length => 80) %></p>
+				<p><%= strip_tags(truncate(@special.camper.features, :length => 80)) %></p>
 			</a>
 		</section>
 
