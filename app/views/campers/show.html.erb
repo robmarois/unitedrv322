@@ -7,6 +7,14 @@
 		<h2 class = "camper_show_headline">
 			<%= @camper.headline %>
 		</h2>
+
+<% if @camper.status.status == "Sold" %>
+    <div class="alert alert-error">
+      Sorry, this unit was recently sold.
+    </div>
+<% end %>
+
+
 			<% if signed_in? %>
 				<%= link_to "edit RV", edit_camper_path %>
 			<% end %>
@@ -14,6 +22,9 @@
 	     <% for attachment in @camper.attachments %>
 		    <% if attachment.id == @camper.attachment_id %>
 				  <%= image_tag attachment.file_url, :class => "group1", :title => attachment.description, :width => 450, :href => attachment.file_url if attachment.file? %>
+				  <% if @camper.status.status == "Sold" %>
+			     	<p>SOLD</p>
+					<% end %>
 		    <% end %>
 	    <% end %>
 	  </div>
