@@ -1,3 +1,7 @@
+
+Rails.env.production? ? (primary_folder = "unitedrv") : (primary_folder = "unitedrv.test")
+
+
 CarrierWave.configure do |config|
   config.cache_dir = "#{Rails.root}/tmp/"
   config.storage = :fog
@@ -8,7 +12,7 @@ CarrierWave.configure do |config|
     :aws_secret_access_key  => ENV['acOeCSvXYv2aNHsibDKTFghrfV41NunYpfSM/t65'],
     :region                 => 'us-east-1'  # optional, defaults to 'us-east-1'
   }
-  config.fog_directory  = 'unitedrv'
+  config.fog_directory  = primary_folder
   # config.fog_public     = true                                   # optional, defaults to true
   # config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}  # optional, defaults to {}
  end
