@@ -2,6 +2,9 @@
 <html>
 <head>
   <title>The page you were looking for doesn't exist (404)</title>
+    
+  <link href="/assets/custom.css?body=1" media="all" rel="stylesheet" type="text/css" />
+
   <style type="text/css">
     body { background-color: #fff; color: #666; text-align: center; font-family: arial, sans-serif; }
     div.dialog {
@@ -13,14 +16,78 @@
       border-bottom-color: #999;
     }
     h1 { font-size: 100%; color: #f00; line-height: 1.5em; }
+    footer { margin-top: 300px !important; }
   </style>
 </head>
 
 <body>
+   <div id="background">
+      <div id="wrap">    
+        <header id="header">
+          <a href="/" id="left-header"></a>
+          <a href="/" id="logo" alt="United RV"></a>
+          <a href="/" id="right-header"></a><br />
+          <div class="header-address">
+            <a href="/contact"><span class="left">607 South Third Avenue<br />Chatsworth, GA 30705</span></a>
+            <span class="center">Ringgold &#183; Chatsworth</span>
+            <a href="/contact"><span class="right">(Tel) 706.695.7000<br />(Fax)    706.965.2797</span></a>
+          </div>
+        </header> 
+
+        <nav id="primary">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/campers">RV Search</a></li>
+            <li><a href="/parts">Parts</a></li>
+            <li><a href="/service">Services</a></li>
+            <li><a href="/news">News</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </nav>
+        
+        <div class="dialog">
+          <h1>Sorry, the page you were looking for doesn't exist.</h1>
+          <p>You may have mistyped the address or the page may have moved.</p>
+        </div>
+
+
+        <footer id="primary-foot">
+          <section id="history">
+            <header><h3>Our History</h3></header>
+            <p>United RV has been helping customers start new adventures for over 20 years and is the oldest RV dealer in North Georgia. We serve the greater Chattanooga area and love getting people out on the open road. Come see why we're different than all other dealerships.<br /> 
+            <a href=/about>Read More</a></p>
+          </section>
+            
+          <section id="info">
+            <nav id="footer-nav">
+              <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/campers">Search</a></li>
+                <li><a href="/parts">Parts</a></li>
+                <li><a href="/service">Services</a></li>
+                <li><a href="/news">News</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/users">Users</a></li>
+                <li><a href="/users/1">Settings</a></li>
+                <li><a href="/users/1/edit">Profile</a></li>
+                <li>
+                  <a href="/signout" data-method="delete" rel="nofollow">Sign out</a>
+                </li>
+              </ul>
+              
+            
+            <p class="copyright">&copy; 2012 Ten in Five Productions<br />
+            </p>
+          </section>
+        </footer>
+
+      </div>
+    </div>
+
+
   <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <h1>The page you were looking for doesn't exist.</h1>
-    <p>You may have mistyped the address or the page may have moved.</p>
-  </div>
+  
 </body>
 </html>
