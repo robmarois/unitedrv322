@@ -57,7 +57,8 @@
 				<article class="news-item">
 					<header>
 						<h1>
-							<a href="/campers/<%= f.id %>"><%= truncate(f.headline, :length => 42) %></a>
+							<%= link_to truncate(f.headline, :length => 42), camper_path(f) %>
+
 						</h1>
 					</header>	
 					<p><time datetime="2011-01-26" pubdate><%= f.created_at.time.to_formatted_s(:long_ordinal)  %></time></p>
