@@ -22,6 +22,8 @@ Unitedrv322::Application.routes.draw do
   match '/news',    to: 'static_pages#news'
   match '/search',   to: 'searches#new'
 
+  match '*path' => redirect('/')
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
