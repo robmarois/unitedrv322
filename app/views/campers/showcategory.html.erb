@@ -1,0 +1,34 @@
+
+<div class="listing">
+  <h1 class="type">United RV <%= @category.category_name %> Units</h1>
+  <div class="listing_wrapper round"> 
+    <h1>Refine Your Search</h1> 
+    <%= form_for @search do |f| %>
+    
+      <fieldset id="search">
+        <span class="col1">
+          <%= f.label "Type" %>
+          <%= f.collection_select :category_id, Category.order(:category_name), :id, :category_name, :include_blank => "Select All" %>
+        </span>
+        <span class="col2">    
+          <%= f.label "Keyword (optional)" %>
+          <%= f.text_field :keywords %>
+        </span>
+        <span class="col4">
+          <div class="field" style="margin-top:30px"><%= f.submit "Find my RV" %></div>
+        </span>
+        
+      </fieldset>
+    <% end %>
+  </div>
+
+
+    
+
+    <% if @camper.count == 0 %>
+      <h1 class="search_results no_results">Sorry, we currently do not have any <%= @category.category_name %> units in stock.</h1>
+    <% else %>
+      <%= render @camper %>
+    <% end %>
+  
+</div>

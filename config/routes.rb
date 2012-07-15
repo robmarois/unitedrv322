@@ -22,6 +22,25 @@ Unitedrv322::Application.routes.draw do
   match '/news',    to: 'static_pages#news'
   match '/search',   to: 'searches#new'
 
+  match '/a-class', to: 'campers#showcategory', :type => 1
+  match '/a-class/*junk', to: 'campers#showcategory', :type => 1
+  match '/b-class', to: 'campers#showcategory', :type => 2
+  match '/b-class/*junk', to: 'campers#showcategory', :type => 2
+  match '/c-class', to: 'campers#showcategory', :type => 3
+  match '/c-class/*junk', to: 'campers#showcategory', :type => 3
+  match '/travel-trailers', to: 'campers#showcategory', :type => 4
+  match '/travel-trailers/*junk', to: 'campers#showcategory', :type => 4
+  match '/fifth-wheel', to: 'campers#showcategory', :type => 5
+  match '/fifth-wheel/*junk', to: 'campers#showcategory', :type => 5
+  match '/toy-haulers', to: 'campers#showcategory', :type => 6
+  match '/toy-haulers/*junk', to: 'campers#showcategory', :type => 6
+  match '/folding-campers', to: 'campers#showcategory', :type => 7
+  match '/folding-campers/*junk', to: 'campers#showcategory', :type => 7
+  match '/truck-campers', to: 'campers#showcategory', :type => 8
+  match '/truck-campers/*junk', to: 'campers#showcategory', :type => 8
+  match '/park-model', to: 'campers#showcategory', :type => 9
+  match '/park-model/*junk', to: 'campers#showcategory', :type => 9
+
   match '*path' => redirect('/')
 
   # The priority is based upon order of creation:

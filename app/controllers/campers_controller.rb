@@ -54,5 +54,13 @@ class CampersController < ApplicationController
 		Camper.find(params[:id]).destroy
     redirect_to root_path, :flash => { :success => "Camper was deleted." }
   end
+
+  def showcategory
+    
+    @camper = Camper.where("category_id = ?", params[:type])
+    @search = Search.new
+    @category = Category.find_by_id(params[:type])
+  end
+
   
 end
