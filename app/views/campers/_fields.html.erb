@@ -3,6 +3,9 @@
 		<div class="left">
 		<%= f.label :headline %>
 		<%= f.text_field :headline, :size => 50 %>
+
+		<%= f.label :permalink %>
+		<%= f.text_field :permalink, :size => 50 %>
 	
 		<%= f.label 'Our Price' %>
 		<%= f.number_field number_with_delimiter(:price_now), :size => 6 %>
@@ -53,7 +56,7 @@
 		
 		<%= f.label 'Choose Main Display Photo' %>
 		<% if @camper.attachment_id? %>
-		<%= f.select :attachment_id, options_from_collection_for_select( Attachment.where("attachable_id = #{params[:id]}"), :id, :file, :selected => @camper.attachment_id),:prompt => 'Select Category' %>	
+		<%= f.select :attachment_id, options_from_collection_for_select( Attachment.where("attachable_id = #{params[:id].to_i}"), :id, :file, :selected => @camper.attachment_id),:prompt => 'Select Category' %>	
 		<% end %> 
 	</div>	
 		

@@ -26,9 +26,11 @@
 
 class Camper < ActiveRecord::Base
 
-  attr_accessible :headline, :price_now, :year, :length, :ac_units, :slide, :features, :brand_id, :mileage, :stock_number, :category_id, :is_new, :model_id, :status_id, :weight, :engine_id, :attachments_attributes, :attachment_id, :brand_name
-  
-
+  attr_accessible :headline, :price_now, :year, :length, :ac_units, 
+                  :slide, :features, :brand_id, :mileage, :stock_number, 
+                  :category_id, :is_new, :model_id, :status_id, :weight, 
+                  :engine_id, :attachments_attributes, :attachment_id, 
+                  :brand_name, :permalink
   
   validates :price_now, :presence => true 
 	validates :year, :presence => true
@@ -48,6 +50,10 @@ class Camper < ActiveRecord::Base
 	
 	accepts_nested_attributes_for :attachments, :reject_if=> proc {|attributes| attributes[:file].blank?}, :allow_destroy => true
 	
+  def to_param
+    "#{id}-#{permalink}"
+  end
+
 	def brand_name
     brand.try(:brand_name)
   end

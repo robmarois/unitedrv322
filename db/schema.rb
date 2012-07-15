@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120320221156) do
+ActiveRecord::Schema.define(:version => 20120714192731) do
 
   create_table "attachments", :force => true do |t|
     t.text     "description"
@@ -48,10 +48,12 @@ ActiveRecord::Schema.define(:version => 20120320221156) do
     t.integer  "attachment_id"
     t.datetime "created_at",                       :null => false
     t.datetime "updated_at",                       :null => false
+    t.string   "permalink"
   end
 
   add_index "campers", ["brand_id"], :name => "index_campers_on_brand_id"
   add_index "campers", ["category_id"], :name => "index_campers_on_category_id"
+  add_index "campers", ["permalink"], :name => "index_campers_on_permalink"
 
   create_table "categories", :force => true do |t|
     t.string   "category_name"
