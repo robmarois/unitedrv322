@@ -74,18 +74,7 @@
 			<% for attachment in @camper.attachments %>
 			  <%= image_tag attachment.file_url(:thumb), :class => "group1", :title => attachment.description, :href => attachment.file_url if attachment.file? %>
 		  <% end %>
-		  <% for attachment in @camper.attachments %>
-			  <%= image_tag attachment.file_url(:thumb), :class => "group1", :title => attachment.description, :href => attachment.file_url if attachment.file? %>
-		  <% end %>
-		  <% for attachment in @camper.attachments %>
-			  <%= image_tag attachment.file_url(:thumb), :class => "group1", :title => attachment.description, :href => attachment.file_url if attachment.file? %>
-		  <% end %>
-		  <% for attachment in @camper.attachments %>
-			  <%= image_tag attachment.file_url(:thumb), :class => "group1", :title => attachment.description, :href => attachment.file_url if attachment.file? %>
-		  <% end %>
-		  <% for attachment in @camper.attachments %>
-			  <%= image_tag attachment.file_url(:thumb), :class => "group1", :title => attachment.description, :href => attachment.file_url if attachment.file? %>
-		  <% end %>
+		  
 
 	  </section>
 	</div>
