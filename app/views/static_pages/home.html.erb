@@ -6,21 +6,29 @@
 	  <!-- Carousel items -->
 	  <div class="carousel-inner">
 	    <div class="active item">
-	    	<%= image_tag("example.jpg") %>
+	    	<%= link_to image_tag("class-a.jpg"), :controller => :static_pages, 
+                                           :action => :news, 
+                                           :type => 1 %>
         <div class="carousel-caption">
 	        <h4>See our complete line of Class B RVs</h4>
 	        <p>Get out on the open road</p>
 	      </div>
 	    </div>
 	    <div class="item">
-	    	<%= image_tag("coastal-camping-short.jpg") %>
+	    	<%= link_to image_tag("grey-wolf.jpg"), "/news" %>
 	    	<div class="carousel-caption">
-	        <h4>See our complete line of Class B RVs</h4>
-	        <p>Get out on the open road</p>
+	        <h4>Forest River Grey Wolf has arrived</h4>
+	        <p>Come see the new line</p>
 	      </div>
 	    </div>
 	    <div class="item">
-	    	<%= image_tag("hero-camper-short.jpg") %>
+	    	<%= link_to image_tag("everest-side.jpg"), :controller => :campers, 
+                                           :action => :showcategory, 
+                                           :type => 5 %>
+	    	<div class="carousel-caption">
+	        <h4>Used Fifth Wheels in stock</h4>
+	        <p>Great deals and priced to move</p>
+	      </div>
 	    </div>
 
 	    
