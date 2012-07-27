@@ -1,27 +1,22 @@
 <% provide(:title, @camper.headline ) %>
 
-<section class="round">
-  		
-</section>
-
-<div class = "camper_show_wrapper">
-	<div class = "camper_show_listing round">
+<div class="row camper-show-listing">
+	<div class="span11">
 		<h2 class = "camper_show_headline">
 			<%= @camper.headline %>
 		</h2>
-
-<% if @camper.status.status == "Sold" %>
-    <div class="alert alert-error">
-      Sorry, this unit was recently sold and is no longer available.
-    </div>
-<% end %>
-
-
-			<% if signed_in? %>
-				<%= link_to "edit RV", edit_camper_path %>
-			<% end %>
-	  <div class="camper_show_picture">
-	     <% for attachment in @camper.attachments %>
+		<% if @camper.status.status == "Sold" %>
+	    <div class="alert alert-error">
+	      Sorry, this unit was recently sold and is no longer available.
+	    </div>
+		<% end %>
+		<% if signed_in? %>
+			<%= link_to "edit RV", edit_camper_path %>
+		<% end %>
+	</div>
+	<div class="row">
+		<div class="span6 camper-show-picture">
+			<% for attachment in @camper.attachments %>
 		    <% if attachment.id == @camper.attachment_id %>
 				  <%= image_tag attachment.file_url, :class => "group1", :title => attachment.description, :width => 450, :href => attachment.file_url if attachment.file? %>
 				  <% if @camper.status.status == "Sold" %>
@@ -29,9 +24,9 @@
 					<% end %>
 		    <% end %>
 	    <% end %>
-	  </div>
-	  <div class="camper_show_details"><br />
-		  <span class="price"><%= number_to_currency(@camper.price_now, :unit => "$") %></span>
+		</div>
+		<div class="span5 camper-show-details">
+			<span class="price"><%= number_to_currency(@camper.price_now, :unit => "$") %></span>
 		  <br />
 		  <p>
 			<span class="col1">Type:</span><span class="col2"><%= @camper.category.category_name %></span>
@@ -60,22 +55,42 @@
 		  <br />
 		  <span class="features"><%= @camper.features.html_safe %></span>
 		</div>
+
 	</div>
+
+</div>
   
-  <div id="camper_photos">
-  	<section  class="box">
-  		<header>
-  			<h1 class="script">Additional Photos</h1>
+
+<div class="row">
+
+	<div id="camper-photos" class="span7">
+		<section>
+			<header>
+				<h1 class="script">Additional Photos</h1>
 	  	</header>
-			<br />
+
+	  	<br />
 			
 			<% for attachment in @camper.attachments %>
 			  <%= image_tag attachment.file_url(:thumb), :class => "group1", :title => attachment.description, :href => attachment.file_url if attachment.file? %>
 		  <% end %>
-		</section>
+		  <% for attachment in @camper.attachments %>
+			  <%= image_tag attachment.file_url(:thumb), :class => "group1", :title => attachment.description, :href => attachment.file_url if attachment.file? %>
+		  <% end %>
+		  <% for attachment in @camper.attachments %>
+			  <%= image_tag attachment.file_url(:thumb), :class => "group1", :title => attachment.description, :href => attachment.file_url if attachment.file? %>
+		  <% end %>
+		  <% for attachment in @camper.attachments %>
+			  <%= image_tag attachment.file_url(:thumb), :class => "group1", :title => attachment.description, :href => attachment.file_url if attachment.file? %>
+		  <% end %>
+		  <% for attachment in @camper.attachments %>
+			  <%= image_tag attachment.file_url(:thumb), :class => "group1", :title => attachment.description, :href => attachment.file_url if attachment.file? %>
+		  <% end %>
+
+	  </section>
 	</div>
- 
-	<div id="camper_blocks">
+
+	<div id="camper-blocks" class="span4">
 		<section id="newsletter" class="box box-right">
 			<header>
 				<h1 class="script">Contact us for more info</h1>
@@ -97,14 +112,18 @@
 					
 					<%= f.hidden_field :camper_id, {:value => @camper.id } %>
 					
-					<%= f.submit "Submit" %>
+					<br />
+					<%= f.submit "Submit", {:class => "btn-primary" } %>
 				</fieldset> 
 			<% end %>
 		</section>
-  </div>	
-  <div class="disclaimer group">
-  Please note: Prices listed on http://www.unitedrvs.com/ are subject to change without notice. United RV does not guarantee the accuracy of the listed prices or details and reserves the right to refuse inaccurate price listings.
 	</div>
+
+
+</div>
+
+<div class="row disclaimer group">
+Please note: Prices listed on http://www.unitedrvs.com/ are subject to change without notice. United RV does not guarantee the accuracy of the listed prices or details and reserves the right to refuse inaccurate price listings.
 </div>
 
 <div id="cboxOverlay" style="opacity: 1; cursor: auto; display: none; "></div>

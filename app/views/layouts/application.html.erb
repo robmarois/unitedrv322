@@ -13,16 +13,21 @@
       <%= render :partial => 'layouts/ga' %>
     <%end%>
 
+
     <script>
-      jQuery(document).ready(function () {
-          jQuery('img.group1').colorbox({ opacity:0.5 , rel:'group1' });
+    // Load this when the DOM is ready
+    $(function(){
+      $('#myCarousel').carousel();
       });
+      $('.carousel').carousel({
+        interval: 2000
+      })
     </script>
 
   </head>
   <body>
     <div id="background">
-      <div id="wrap">    
+      <div id="container">    
         <%= render 'layouts/header' %>
         <% flash.each do |key, value| %>
           <%= content_tag(:div, value, class: "alert alert #{key}") %>
