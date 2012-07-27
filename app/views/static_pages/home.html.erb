@@ -6,8 +6,8 @@
 	  <!-- Carousel items -->
 	  <div class="carousel-inner">
 	    <div class="active item">
-	    	<%= link_to image_tag("class-a.jpg"), :controller => :static_pages, 
-                                           :action => :news, 
+	    	<%= link_to image_tag("class-a.jpg"), :controller => :campers, 
+                                           :action => :showcategory, 
                                            :type => 1 %>
         <div class="carousel-caption">
 	        <h4>See our complete line of Class B RVs</h4>
@@ -15,7 +15,8 @@
 	      </div>
 	    </div>
 	    <div class="item">
-	    	<%= link_to image_tag("grey-wolf.jpg"), "/news" %>
+	    	<%= link_to image_tag("grey-wolf.jpg"), :controller => :static_pages, 
+                                           :action => :news %>
 	    	<div class="carousel-caption">
 	        <h4>Forest River Grey Wolf has arrived</h4>
 	        <p>Come see the new line</p>
@@ -105,7 +106,11 @@
 			</header>
 			<a href="/campers/<%= @special.camper.id %>">
 			<p><%= truncate(@special.camper.headline, :length => 60) %></p>
-			<%= image_tag("rvfeatured.jpg", :class => "display") %>
+			<% for attachment in @special.camper.attachments %>
+		    <% if attachment.id == @special.camper.attachment_id %>
+				  <%= image_tag attachment.file_url, :class => "price", :title => attachment.description,  :href => attachment.file_url if attachment.file? %>
+		    <% end %>
+	    <% end %>
 		
 	    
 				<p><%= strip_tags(truncate(@special.camper.features, :length => 80)) %></p>
