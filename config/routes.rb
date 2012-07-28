@@ -40,6 +40,8 @@ Unitedrv322::Application.routes.draw do
   match '/truck-campers/*junk', to: 'campers#showcategory', :type => 8
   match '/park-model', to: 'campers#showcategory', :type => 9
   match '/park-model/*junk', to: 'campers#showcategory', :type => 9
+  
+  match '/greywolf', to: 'campers#greywolf'
 
   match '*path' => redirect('/')
 

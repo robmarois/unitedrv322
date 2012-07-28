@@ -1,8 +1,7 @@
-<% provide(:title, @category.category_name) %>
-
+<% provide(:title, 'New 2013 Forest River Grey Wolf') %>
 
 <div class="listing">
-  <h1 class="type">United RV <%= @category.category_name %> Units</h1>
+  <h1 class="type">United RV 2013 Forest River Grey Wolf</h1>
   <div class="row listing_wrapper"> 
     <div class="span12">
       <h1>Refine Your Search</h1> 
@@ -32,7 +31,7 @@
     
 
     <% if @camper.count == 0 %>
-      <h1 class="search_results no_results" style="margin-bottom:200px;margin-left: 20px;">Sorry, we currently do not have any <%= @category.category_name %> units in stock.</h1>
+      <h1 class="search_results no_results" style="margin-bottom:200px;margin-left: 20px;">Sorry, we currently do not have any Grey Wolf units in stock.</h1>
     <% else %>
       <%= render @camper %>
     <% end %>

@@ -61,6 +61,11 @@ class CampersController < ApplicationController
     @search = Search.new
     @category = Category.find_by_id(params[:type])
   end
+  
+  def greywolf
+    @camper = Camper.where("is_new = ?", true)
+    @search = Search.new
+  end
 
   
 end
