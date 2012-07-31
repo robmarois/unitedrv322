@@ -34,6 +34,20 @@
         <% end %>
         <%= yield %>
         <%= render 'layouts/footer' %>
+        
+        <% if controller_name == 'static_pages' && action_name == 'home' %>
+          <div class="scrolling-description">
+            <h4></h4>
+            <p>United RV in Chatsworth GA has an experienced and committed sales staff with a long history of satisfying our customers' needs. Feel free to browse United RV's inventory online, request more information about an RV from one of our trained sales professionals, set up an appointment with a sales associate or inquire about financing! We specialize in Customer Satisfaction!</p>
+            <p>United RV is located in Chatsworth, Georgia. An RV dealer just outside of Dalton, we offer great prices and incentives for new Forest River Grey Wolf campers, used campers, travel trailers and fifth wheels to all of our neighbors in Ringgold, Calhoun, Cartersville, Acworth, Kennesaw, Marietta, Atlanta, East Ridge, Chattanooga, Cleveland, Hixson, South Pittsburg, Dayton, Cleveland, Red Bank and Soddy Daisy. Customer satisfaction is crucial to our success at United RV. Our Expert Service & Parts staff assists our Ringgold, Georgia customers to keep their campers and RVs in great shape.</p>
+            <p>We look forward to serving your RV needs and hope that we can help you with your next new Forest River Grey Wolf or pre-owned camper or RV purchase.</p>
+            <p>United RV carries a complete selection of new & used campers available in our dealership located in Chatsworth, Georgia. At United RV, we like to think of ourselves as your one stop shop for all your RV needs in the North Georgia and South East Tennessee area.</p>
+            <p>At United RV in Chatsworth Georgia, customer service is our number one priority. If you plan to buy Forest River Grey Wolf, new or used Class A, Class B, Class C, Travel Trailers, Fifth Wheels, Toy Haulers or other RV camping unit, you will always find great prices, service and parts at our dealership.</p>
+            <p>Because of our outstanding service and great prices, customers travel from all over the great state of Georgia and the Chattanooga area to visit United RV.</p>
+            <br /> 
+            <p>Forest River, Grey Wolf, Keystone, Flagstaff, Cherokee, Dutchmen, Fourwinds, Winnebago, Fleetwood, 1/2 Ton Towable, Class A, Class B, Class C, Travel Trailer, Fifth Wheel, Toy Haulers</p> 
+          </div>
+        <% end %>
         <%= debug(params) if Rails.env.development? %>
       </div>
     </div>

@@ -1,4 +1,4 @@
-<% provide(:title, 'About Us') %>
+<% provide(:title, 'The United RV Difference') %>
 
 <div class="row">
   <div class="span6">
@@ -15,10 +15,9 @@
       <p>United RV Centers opened its doors in 1991 and today is the oldest RV dealer in North Georgia.</p>
       <p>At United RV we believe everyone should be able to experience the joy of RV’ing no matter what their budget. Our goal, since our business began, has remained the same…to offer our customers clean and quality units at an affordable price. </p>
       <p>Because United RV is family owned and operated, we understand a satisfied customer is our greatest asset. Maintaining our pledge to provide quality RV’s along with superior service after the sale has afforded us great repeat customer loyalty and referrals.</p>
-      <p>United RV currently has two locations in North Georgia: Chatsworth and Ringgold, GA just 20 minutes from Chattanooga, TN or Dalton, GA.</p>
-      <p>Our main sales office is located at I-75, Ringgold Exit 348, in Ringgold and just off Highway 52 in Chatsworth.</p>
-      <p>We handpick our inventory and perform complete quality checks on every unit before it is placed on the sales lot. We offer the cleanest, most dependable and affordable motorhomes, fifth wheels and travel trailers that can be found.</p> 
-      <p>United RV is a ONE STOP RV CENTER! In addition to RV sales, United RV also offers RV service, parts, repair and storage and insurance estimates. United RV is an authorized Curt and Reese hitch dealer with certified hitch installation.</p>
+      <p>United RV is <%= link_to "located", contact_path %> in Chatsworth GA off Highway 52, just 20 minutes from Chattanooga, TN or Dalton, GA.</p>
+      <p>We handpick our <%= link_to "inventory", campers_path %> and perform complete quality checks on every unit before it is placed on the sales lot. We offer the cleanest, most dependable and affordable motorhomes, fifth wheels and travel trailers that can be found.</p> 
+      <p>United RV is a ONE STOP RV CENTER! In addition to RV sales, United RV also offers RV <%= link_to "service", service_path %>, <%= link_to "parts", parts_path %>, repair and storage and insurance estimates. United RV is an authorized Curt and Reese hitch dealer with certified hitch installation.</p>
       <p>At United RV we’re gonna make you RV Happy!</p>
     </div>
   </div>
