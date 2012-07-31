@@ -104,7 +104,7 @@
 			<header>
 				<h2 class="script">Featured Camper</h2>
 			</header>
-			<a href="/campers/<%= @special.camper.id %>">
+			<a href="/campers/<%= @special.camper.id %>-<%= @special.camper.permalink %>">
 			<p><%= truncate(@special.camper.headline, :length => 60) %></p>
 			<% for attachment in @special.camper.attachments %>
 		    <% if attachment.id == @special.camper.attachment_id %>
