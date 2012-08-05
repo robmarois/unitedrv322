@@ -4,7 +4,7 @@
       <% if attachment.id == camper.attachment_id %>
         <%= image_tag attachment.file_url, :class => "group1", :title => attachment.description, :width => 150, :href => attachment.file_url if attachment.file? %>
         <% if camper.status.status == "Sold" %>
-        <p>SOLD</p>
+        <p class="sold">SOLD</p>
         <% end %>
         <% if camper.status.status == "Sale Pending" %>
         <p class="pending">SALE PENDING</p>
