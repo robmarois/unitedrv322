@@ -6,6 +6,9 @@
         <% if camper.status.status == "Sold" %>
         <p>SOLD</p>
         <% end %>
+        <% if camper.status.status == "Sale Pending" %>
+        <p class="pending">SALE PENDING</p>
+        <% end %>
       <% end %>
     <% end %>
   </div>

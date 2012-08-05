@@ -10,6 +10,11 @@
 	      Sorry, this unit was recently sold and is no longer available.
 	    </div>
 		<% end %>
+		<% if @camper.status.status == "Sale Pending" %>
+	    <div class="alert alert-warning">
+	      This unit is pending sale and may no longer be available.
+	    </div>
+		<% end %>
 		<% if signed_in? %>
 			<%= link_to "edit RV", edit_camper_path %>
 		<% end %>
@@ -21,6 +26,9 @@
 				  <%= image_tag attachment.file_url, :class => "group1", :title => attachment.description, :width => 450, :href => attachment.file_url if attachment.file? %>
 				  <% if @camper.status.status == "Sold" %>
 			     	<p>SOLD</p>
+          <% end %>
+          <% if @camper.status.status == "Sale Pending" %>
+            <p class="pending">SALE PENDING</p>
 					<% end %>
 		    <% end %>
 	    <% end %>
