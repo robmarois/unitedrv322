@@ -55,17 +55,6 @@
 }
 
 @font-face {
-    font-family: 'PermanentMarkerRegular';
-    src: url('/fonts/PermanentMarker-webfont.eot');
-    src: url('/fonts/PermanentMarker-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/fonts/PermanentMarker-webfont.woff') format('woff'),
-         url('/fonts/PermanentMarker-webfont.ttf') format('truetype'),
-         url('/fonts/PermanentMarker-webfont.svg#PermanentMarkerRegular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
     font-family: 'RockSaltRegular';
     src: url('/fonts/RockSalt-webfont.eot');
     src: url('/fonts/RockSalt-webfont.eot?#iefix') format('embedded-opentype'),
@@ -160,29 +149,29 @@ header .navbar {
 	font-weight: bold;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-}
+  
+  ul li {
+    display: inline;
+    padding-left: 33px;
+  }
 
-#primary ul li {
-	display: inline;
-	padding-left: 33px;
-}
-
-#primary li a {
-	padding: 5px 15px;
-	color: #64645d;
-	text-shadow: 1px 1px 1px #fff;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-	-webkit-transition: all .3s ease-in-out;
-	-moz-transition: all .3s ease-in-out;
-	-o-transition: all .3s ease-in-out;
-	transition: all .3s ease-in-out;
-}
-
-#primary li a:hover {
-	color: #dc692e;
-	background: #efefe9;
+  li a {
+    padding: 5px 15px;
+    color: #64645d;
+    text-shadow: 1px 1px 1px #fff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+  }
+  
+  li a:hover {
+    color: #dc692e;
+    background: #efefe9;
+  }
 }
 
 .caret {
@@ -308,59 +297,53 @@ ul.polaroids-page { float: left; margin: 20px 0 18px 30px; padding-right: 20px;
   &.users {
 	float: left;
 	}
-}
+  h2 {
+    font: normal 24px "MarketingScriptRegular", Georgia, serif;
+    color: #717165;
+    margin-left: 10px;
+    padding: 5px 0 0 0;
+    border-bottom: 1px solid #ecece9;
+    width: auto;
+    text-align: left;  
+  }
 
+  p {
+    font-size: 18px;
+    color: #717165;
+    margin-left: 10px;
+    padding: 5px 0 5px 0;
+    width: auto;
+    text-align: left;  
+  }
+  ul li {
+    width: 316px;
+    font: normal 18px #717165; 
+    color: #717165;
+    text-shadow: 1px 1px 1px #fff;
+    position: relative;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    letter-spacing: 1px;
+    list-style-type: disc;
+  }
 
-#selections h2 {
-	font: normal 24px "MarketingScriptRegular", Georgia, serif;
-	color: #717165;
-	margin-left: 10px;
-	padding: 5px 0 0 0;
-	border-bottom: 1px solid #ecece9;
-	width: auto;
-	text-align: left;
+  em {
+    text-transform: lowercase;
+    font-style: italic;
+    font: normal 35px "MarketingScriptRegular", Georgia, serif;
+    letter-spacing: 0;
+  }
 
-}
-
-#selections p {
-	font-size: 18px;
-	color: #717165;
-	margin-left: 10px;
-	padding: 5px 0 5px 0;
-	width: auto;
-	text-align: left;
-
-}
-
-#selections ul li {
-	width: 316px;
-	font: normal 18px #717165; 
-	color: #717165;
-	text-shadow: 1px 1px 1px #fff;
-	position: relative;
-	margin-bottom: 5px;
-	margin-left: 20px;
-	letter-spacing: 1px;
-	list-style-type: disc;
-}
-
-#selections em {
-	text-transform: lowercase;
-	font-style: italic;
-	font: normal 35px "MarketingScriptRegular", Georgia, serif;
-	letter-spacing: 0;
-}
-
-#selections span {
-	position: absolute;
-	top: -21px;
-	right: -85px;
-	font: normal 75px "LeagueGothicRegular", Tahoma, Arial, sans-serif;
-	color: #dc692e;
-}
-
-#selections a {
-  text-decoration: underline;
+  span {
+    position: absolute;
+    top: -21px;
+    right: -85px;
+    font: normal 75px "LeagueGothicRegular", Tahoma, Arial, sans-serif;
+    color: #dc692e;
+  }
+  a {
+    text-decoration: underline;
+  }
 }
 
 .box-row {
@@ -373,16 +356,15 @@ ul.polaroids-page { float: left; margin: 20px 0 18px 30px; padding-right: 20px;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-}
-
-.box h2.script {
-	font: normal 24px "MarketingScriptRegular", Georgia, serif;
-	color: #717165;
-	margin-left: 10px;
-	padding: 5px 0 0 0;
-	border-bottom: 1px solid #ecece9;
-	width: 95%;
-	text-align: left;
+  .box h2.script {
+    font: normal 24px "MarketingScriptRegular", Georgia, serif;
+    color: #717165;
+    margin-left: 10px;
+    padding: 5px 0 0 0;
+    border-bottom: 1px solid #ecece9;
+    width: 95%;
+    text-align: left;
+  }
 }
 
 /* New RV Listing */
@@ -398,19 +380,16 @@ ul.polaroids-page { float: left; margin: 20px 0 18px 30px; padding-right: 20px;
 	font: normal 9px "DroidSansBold", Verdana, sans-serif;
 	color: #98988c;
 	text-transform: uppercase;
-}
-
-#news p a {
-	color: #98988c;
-	text-decoration: underline;
-}
-
-#news p a:hover {
-	text-decoration: none;
-}
-
-#news p span.via {
-	text-transform: none;
+  a {
+    color: #98988c;
+    text-decoration: underline;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  span.via {
+    text-transform: none;
+  }
 }
 
 .news-item {
@@ -427,46 +406,43 @@ ul.polaroids-page { float: left; margin: 20px 0 18px 30px; padding-right: 20px;
 	-o-transition: width 0.3s linear, background 0.2s ease;
 	transition: width 0.3s linear, background 0.2s ease;
 	
-}
-
-.news-item:hover {
-	width: 275px;
-	background: #d0d0c6;
-	background: rgba(208, 208, 198, .5);
+  &:hover {
+    width: 275px;
+    background: #d0d0c6;
+    background: rgba(208, 208, 198, .5);
+  }
 }
 
 /* special listing */
 
 #specials {
 	text-align: center;
-}
-
-#specials p {
-	padding: 10px 10px 0px 10px;
-	font: normal 13px "DroidSansRegular", Verdana, Arial, sans-serif;
-	color: #6a6a5d;
-	clear: both;
-}
-
-#specials img.display { 
-	background: #fff; 
-	display: inline; 
-	float: left; 
-	margin: 10px 40px 10px 30px; 
-	width: 200px; 
-	padding: 10px 10px 10px; 
-	text-align: center; 
-	font-family: "RockSaltRegular", sans-serif; 
-	text-decoration: none; 
-	color: #333; 
-	font-size: 12px; 
-	-webkit-box-shadow: 0 6px 9px rgba(0,0,0,.25); 
-	-moz-box-shadow: 0 3px 6px rgba(0,0,0,.25); 
-	box-shadow: 0 3px 6px rgba(0,0,0,.25); 
-	-webkit-transform: rotate(-2deg); 
-	-webkit-transition: -webkit-transform .15s linear; 
-	-moz-transform: rotate(-2deg); 
-	-webkit-backface-visibility: hidden; 
+  p {
+    padding: 10px 10px 0px 10px;
+    font: normal 13px "DroidSansRegular", Verdana, Arial, sans-serif;
+    color: #6a6a5d;
+    clear: both;
+  }
+  img.display { 
+    background: #fff; 
+    display: inline; 
+    float: left; 
+    margin: 10px 40px 10px 30px; 
+    width: 200px; 
+    padding: 10px 10px 10px; 
+    text-align: center; 
+    font-family: "RockSaltRegular", sans-serif; 
+    text-decoration: none; 
+    color: #333; 
+    font-size: 12px; 
+    -webkit-box-shadow: 0 6px 9px rgba(0,0,0,.25); 
+    -moz-box-shadow: 0 3px 6px rgba(0,0,0,.25); 
+    box-shadow: 0 3px 6px rgba(0,0,0,.25); 
+    -webkit-transform: rotate(-2deg); 
+    -webkit-transition: -webkit-transform .15s linear; 
+    -moz-transform: rotate(-2deg); 
+    -webkit-backface-visibility: hidden; 
+  }
 }
 
 /* newsletter signup */
@@ -474,14 +450,13 @@ ul.polaroids-page { float: left; margin: 20px 0 18px 30px; padding-right: 20px;
 #sign-up fieldset { margin: 10px 0 0px 0px; }
 
 #newsletter p {
-padding: 10px 0px 0px 10px;
-font: normal 13px "DroidSansRegular", Verdana, Arial, sans-serif;
-color: #6A6A5D;
-}
-
-#newsletter p.privacy {
-padding-top: 0px;
-margin-top: 0px;
+  padding: 10px 0px 0px 10px;
+  font: normal 13px "DroidSansRegular", Verdana, Arial, sans-serif;
+  color: #6A6A5D;
+  &.privacy {
+    padding-top: 0px;
+    margin-top: 0px;
+  }
 }
 
 #sign-up label { 
@@ -580,10 +555,10 @@ position: relative;
 	p.sold {
 		position: absolute; 
 	 	top: 45px; 
-	  	left: 15px !important; 
-	  	/* width: 100%; */
-	  	font-size: 48px !important;
-	  	color: red;
+    left: 15px !important; 
+    /* width: 100%; */
+    font-size: 48px !important;
+    color: red;
 	}
 	p.pending {
 		position: absolute; 
@@ -596,11 +571,11 @@ position: relative;
 	}
 
 	img {
-	float: left;
-	border: 5px solid #fafaf6;
-	-webkit-box-shadow: 0px 3px 3px #B2B4B4;
-	-moz-box-shadow: 0px 3px 3px #B2B4B4;
-	box-shadow: 0px 3px 3px #B2B4B4;
+    float: left;
+    border: 5px solid #fafaf6;
+    -webkit-box-shadow: 0px 3px 3px #B2B4B4;
+    -moz-box-shadow: 0px 3px 3px #B2B4B4;
+    box-shadow: 0px 3px 3px #B2B4B4;
 	}
 }
 
@@ -610,29 +585,29 @@ position: relative;
 	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
 	color: #6a6a5d;
 	h2 {
-	padding-bottom: 8px;
-	color: #0054a6;
-	font: bold 24px "Lucida Grande", Lucida, Verdana, sans-serif;
+    padding-bottom: 8px;
+    color: #0054a6;
+    font: bold 24px "Lucida Grande", Lucida, Verdana, sans-serif;
 	}
 	.col1 {
-	width: 35%;
-	float: left;
-	display: inline-block;
+    width: 35%;
+    float: left;
+    display: inline-block;
 	}
 	.col2 {
-	width: 25%;
-	float: left;
-	display: inline-block;
+    width: 25%;
+    float: left;
+    display: inline-block;
 	}
  	.col3 {
-	width: 40%;
-	float: right;
-	display: inline-block;
+    width: 40%;
+    float: right;
+    display: inline-block;
 	}
 	.features {
-	font-size: 14px;
-	text-align: left;
-	margin-top: 20px;
+    font-size: 14px;
+    text-align: left;
+    margin-top: 20px;
 	}
 }
 
@@ -642,18 +617,18 @@ position: relative;
 	display: inline;
 	
 	p.price {
-	text-align: right;
-	color: #000;
-	font-size: 24px;
+    text-align: right;
+    color: #000;
+    font-size: 24px;
 	}
 	input[type="submit"] {
-	float: right;
-	text-transform: uppercase;
+    float: right;
+    text-transform: uppercase;
 	}
 	input[type="submit"]:hover {
-	-webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, .4); 
-	-moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, .4);
-	box-shadow: 1px 1px 3px rgba(0, 0, 0, .4);
+    -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, .4); 
+    -moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, .4);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, .4);
 	}
 }
 
@@ -875,13 +850,12 @@ position: relative;
 	height: auto;
 	overflow: hidden;
 	float: left;
-}
-
-.contact-form h2 {
-	color: #fff;
-	font: 20px "Lucida Grande", Lucida, Verdana, sans-serif;
-	margin-left: 15px;
-	margin-top: 10px;
+	h2 {
+    color: #fff;
+    font: 20px "Lucida Grande", Lucida, Verdana, sans-serif;
+    margin-left: 15px;
+    margin-top: 10px;
+  }
 }
 
 #sign-up .contact-form {
@@ -914,12 +888,10 @@ font-family: Georgia, serif;
 	span {
 		margin-left: 0px;
 	}
+  .navbar li a {
+    padding: 0 3px 0 3px;
+  }
 }
-
-.primary-footer .navbar li a {
-	padding: 0 3px 0 3px;
-}
-
 
 #info {
 	float: right;
