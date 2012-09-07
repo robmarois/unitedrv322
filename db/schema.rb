@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120714192731) do
+ActiveRecord::Schema.define(:version => 20120907203942) do
 
   create_table "attachments", :force => true do |t|
     t.text     "description"
@@ -65,18 +65,6 @@ ActiveRecord::Schema.define(:version => 20120714192731) do
     t.string   "engine_type"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-  end
-
-  create_table "maxprices", :force => true do |t|
-    t.string   "max_price"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "minprices", :force => true do |t|
-    t.string   "min_price"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "prospects", :force => true do |t|

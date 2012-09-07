@@ -1,6 +1,5 @@
 class Search < ActiveRecord::Base
-  belongs_to :minprice
-  belongs_to :maxprice
+  
   
   def campers
     @campers ||= find_campers
