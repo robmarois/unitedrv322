@@ -3,7 +3,7 @@ class CampersController < ApplicationController
   before_filter :authenticate, :only => [:new, :create, :edit, :update, :destroy]
   
   def index
-    @camper = Camper.all
+    @camper = Camper.order('status_id ASC').all
     @search = Search.new
   end
   
@@ -57,13 +57,13 @@ class CampersController < ApplicationController
 
   def showcategory
     
-    @camper = Camper.where("category_id = ?", params[:type])
+    @camper = Camper.where("category_id = ?", params[:type]).order('status_id ASC')
     @search = Search.new
     @category = Category.find_by_id(params[:type])
   end
   
   def greywolf
-    @camper = Camper.where("is_new = ?", true)
+    @camper = Camper.where("is_new = ?", true).order('status_id ASC')
     @search = Search.new
   end
 

@@ -5,7 +5,7 @@ class SearchesController < ApplicationController
 	end
 	
 	def index
-  		@campers = Camper.all
+  		@campers = Camper.all.order('status_id ASC')
   		@search = Search.new
 	end
 	
