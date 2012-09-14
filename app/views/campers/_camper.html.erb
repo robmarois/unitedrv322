@@ -27,7 +27,7 @@
   <div class="span2 listing-price">
     <p class="price"><%= number_to_currency(camper.price_now, :unit => "$") %></p>
     <form METHOD="LINK" ACTION="<%= camper_path(camper) %>">
-    <a href="<%= camper_path(camper) %>"><input type="submit" class="btn-primary" value="View Details" action="<%= camper_path(camper) %>"></a>
+    <a href="<%= camper_path(camper) %>"><input type="submit" class="btn btn-primary" value="View Details" action="<%= camper_path(camper) %>"></a>
     </form>
   </div>
 </div>
