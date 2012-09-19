@@ -13,7 +13,7 @@ gem 'mini_magick'
 gem 'fog'
 gem 'nested_form'
 gem 'sitemap_generator'
-gem 'pg', '0.12.2'
+
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -44,7 +44,7 @@ group :test do
 end
 
 group :production do
-  
+  gem 'pg', '0.12.2'
 end
 
 # To use ActiveModel has_secure_password
