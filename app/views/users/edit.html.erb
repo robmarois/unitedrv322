@@ -1,12 +1,16 @@
-<% provide(:title, "Edit user") %> 
-<div id="selections" class="users">
-<h2>Update Your Profile</h2><br />
+<% provide(:title, "Edit user") %>
 
-  <%= form_for(@user) do |f| %>
-    <div id="sign-up">
-      <%= render 'fields', :f => f %>
-      <%= f.submit "Save changes" %>
-    </div>
-  <% end %>
+<div class="row">
+ <div class="span8">
+  <div id="selections" class="users">
+  <h2>Update Your Profile</h2><br />
+  
+    <%= form_for(@user) do |f| %>
+      <div id="sign-up">
+        <%= render 'fields', :f => f %>
+        <%= f.submit "Save changes" %>
+      </div>
+    <% end %>
+  </div>
+ </div>
 </div>
-
