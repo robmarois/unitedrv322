@@ -62,23 +62,22 @@
 
 </div>
 
-<!--
 <div class="row ">
 	<div class="span12 map-box">
 		<div class="row">
 			<div class="span4">
-				<%= image_tag("price.png") %>
+				<%= image_tag("test.jpg", :class => "map-image") %>
 			</div>
-			<div class="span4">
-				<%= image_tag("offer.png") %>
+			<div class="span8 map-text">
+				<h3><%= link_to("The 2013 Grey Wolf line is here!", :controller => :campers, 
+                                           :action => :greywolf) %></h3>
+				<p>Limited availability - up to a 6-week waiting list for the next delivery.</p>
+				<p> <%= link_to("Come to Chatsworth today", contact_path) %> before they're gone!</p>
 			</div>
-			<div class="span4">
-				<%= image_tag("price.png") %>
-			</div>
+			
 		</div>
 	</div>
 </div>
--->
 
 <div class="row box-row">
 	<div class="span4 box">
