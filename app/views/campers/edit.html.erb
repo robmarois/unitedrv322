@@ -1,10 +1,12 @@
+<% provide(:title, "RV Edit") %>
+
 <div id="camper-fields" class="users">
 <h2>Edit Camper</h2>
 <br />
 <%= nested_form_for @camper, :html=>{:multipart => true } do |f| %>
 	<%= render 'shared/error_messages', :object => f.object %>
 	<div id="sign-up" class="actions">
-		<%= f.submit "Update RV" %>	
+		<%= f.submit "Update RV" %>
 
 	</div>
 		
@@ -17,13 +19,19 @@
 	<% end %>
 <br />
 
-<div id="action-links">
 
-<%= link_to "Go to the RV Listing", @camper %><br /><br />
-<%= link_to 'Delete this RV', @camper, :method => :delete,
-									  :confirm => "This action will delete the RV. Are you sure?", :title => @camper.headline %>
-									  
-</div> 
+<div class="row">
+<div class="span10">
+    <div id="action-links">
+    
+    <%= link_to "Go to the RV Listing", @camper %><br /><br />
+    <%= link_to 'Delete this RV', @camper, :method => :delete,
+                        :confirm => "This action will delete the RV. Are you sure?", :title => @camper.headline %>
+                        
+    </div> 
+  </div>
+</div>
+
 									  
 </div>
 									  
