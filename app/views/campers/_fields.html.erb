@@ -32,7 +32,7 @@
 		<%= f.number_field :slide, :size => 2 %>
 		
 		<%= f.label 'Engine Type' %>
-		<%= f.select :engine_id, options_from_collection_for_select( Engine.all, :id, :engine_type),:prompt => 'Select Engine Type' %>	
+		<%= f.select :engine_id, options_from_collection_for_select( Engine.all, :id, :engine_type, :selected => @camper.engine_id),:prompt => 'Select Engine Type' %>	
 	</div>
 	<div class="right">
 
