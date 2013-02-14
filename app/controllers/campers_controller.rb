@@ -3,7 +3,8 @@ class CampersController < ApplicationController
   before_filter :authenticate, :only => [:new, :create, :edit, :update, :destroy]
   
   def index
-    @camper = Camper.order('status_id ASC').all
+    # Listing of campers not marked as sold, ordered by available, sale pending
+    @camper = Camper.where("status_id != ?", 3).order('status_id ASC').all
     @search = Search.new
   end
   
