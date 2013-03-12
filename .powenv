@@ -1,12 +1,12 @@
-export PATH ; PATH="/Users/robmarois/.rvm/gems/ruby-1.9.3-p194@rails326/bin:/Users/robmarois/.rvm/gems/ruby-1.9.3-p194@global/bin:/Users/robmarois/.rvm/rubies/ruby-1.9.3-p194/bin:/Users/robmarois/.rvm/bin:$PATH"
-export rvm_env_string ; rvm_env_string='ruby-1.9.3-p194@rails326'
+export PATH ; PATH="/Users/robmarois/.rvm/gems/ruby-1.9.3-p392@rails3212/bin:/Users/robmarois/.rvm/gems/ruby-1.9.3-p392@global/bin:/Users/robmarois/.rvm/rubies/ruby-1.9.3-p392/bin:/Users/robmarois/.rvm/bin:$PATH"
+export rvm_env_string ; rvm_env_string='ruby-1.9.3-p392@rails3212'
 export rvm_path ; rvm_path='/Users/robmarois/.rvm'
-export rvm_ruby_string ; rvm_ruby_string='ruby-1.9.3-p194'
-export rvm_gemset_name ; rvm_gemset_name='rails326'
-export RUBY_VERSION ; RUBY_VERSION='ruby-1.9.3-p194'
-export GEM_HOME ; GEM_HOME='/Users/robmarois/.rvm/gems/ruby-1.9.3-p194@rails326'
-export GEM_PATH ; GEM_PATH='/Users/robmarois/.rvm/gems/ruby-1.9.3-p194@rails326:/Users/robmarois/.rvm/gems/ruby-1.9.3-p194@global'
-export MY_RUBY_HOME ; MY_RUBY_HOME='/Users/robmarois/.rvm/rubies/ruby-1.9.3-p194'
-export IRBRC ; IRBRC='/Users/robmarois/.rvm/rubies/ruby-1.9.3-p194/.irbrc'
+export rvm_ruby_string ; rvm_ruby_string='ruby-1.9.3-p392'
+export rvm_gemset_name ; rvm_gemset_name='rails3212'
+export RUBY_VERSION ; RUBY_VERSION='ruby-1.9.3-p392'
+export GEM_HOME ; GEM_HOME='/Users/robmarois/.rvm/gems/ruby-1.9.3-p392@rails3212'
+export GEM_PATH ; GEM_PATH='/Users/robmarois/.rvm/gems/ruby-1.9.3-p392@rails3212:/Users/robmarois/.rvm/gems/ruby-1.9.3-p392@global'
+export MY_RUBY_HOME ; MY_RUBY_HOME='/Users/robmarois/.rvm/rubies/ruby-1.9.3-p392'
+export IRBRC ; IRBRC='/Users/robmarois/.rvm/rubies/ruby-1.9.3-p392/.irbrc'
 unset MAGLEV_HOME
 unset RBXOPT
