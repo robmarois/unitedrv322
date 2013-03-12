@@ -14,15 +14,5 @@
 //= require jquery-ui
 //= require jquery_ujs
 //= require rails.validations
-//= require bootstrap-transition
-//= require bootstrap-modal
-//= require bootstrap-dropdown
-//= require bootstrap-scrollspy
-//= require bootstrap-tab
-//= require bootstrap-tooltip
-//= require bootstrap-popover
-//= require bootstrap-affix
-//= require bootstrap-alert
-//= require bootstrap-button
-//= require bootstrap-collapse
+//= require bootstrap
 //= require_tree .
